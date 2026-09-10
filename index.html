@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V Group</title>
+<link rel="icon" type="image/png" href="assets/images/logo_icon.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --paper:#F7F2E6;
+    --paper-2:#FFFFFF;
+    --ink:#182238;
+    --ink-soft:#545C72;
+    --gold:#A9803A;
+    --gold-deep:#7C5A22;
+    --gold-on-navy:#C9A25C;
+    --line:#E1D4B2;
+    --navy:#182238;
+    --navy-2:#212E4C;
+    --text-on-navy:#EFE8D6;
+    --text-on-navy-soft:#AEB4C9;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+
+  h1,h2,h3{
+    font-family:'Cormorant',Georgia,'Times New Roman',serif;
+    font-weight:600;
+    line-height:1.08;
+    margin:0;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:1140px;
+    margin-inline:auto;
+    padding-inline:clamp(22px,5vw,60px);
+  }
+
+  .rule{
+    width:64px;height:2px;
+    background:var(--gold);
+    margin-top:16px;
+  }
+  .rule.center{margin-inline:auto;}
+
+  .eyebrow{
+    font-size:0.76rem;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+  }
+
+  .lede{
+    font-size:1.05rem;
+    line-height:1.68;
+    color:var(--ink-soft);
+    max-width:54ch;
+  }
+
+  /* ---------- brand mark ---------- */
+  .mark{width:26px;height:auto;flex:none;display:block;}
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-block:18px;
+  }
+  .brand{display:flex;align-items:center;gap:9px;color:var(--ink);}
+  .brand .mark{color:var(--gold-deep);}
+  .brand-word{
+    font-family:'Cormorant',serif;
+    font-size:1.3rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{
+    color:var(--ink-soft);
+    font-size:0.85rem;
+    font-weight:600;
+    letter-spacing:0.01em;
+  }
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--gold-deep);}
+  .nav-cta{
+    display:inline-block;
+    background:var(--gold);
+    color:#fff;
+    font-weight:700;
+    font-size:0.82rem;
+    padding:9px 18px;
+    border:1px solid var(--gold);
+  }
+  .nav-cta:hover,.nav-cta:focus-visible{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;}
+  .nav-toggle{display:none;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:absolute;
+      inset:100% 0 auto 0;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      background:var(--paper);
+      border-bottom:1px solid var(--line);
+      padding:6px clamp(22px,5vw,60px) 18px;
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{padding-block:12px;width:100%;border-top:1px solid var(--line);}
+    .nav-links .nav-cta{width:100%;text-align:center;margin-top:14px;border-top:none;}
+    .nav-toggle{
+      display:flex;flex-direction:column;justify-content:center;gap:5px;
+      width:34px;height:34px;background:none;border:1px solid var(--line);
+      cursor:pointer;align-items:center;
+    }
+    .nav-toggle span{width:16px;height:1.5px;background:var(--ink);}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    text-align:center;
+    padding-block:clamp(64px,10vw,104px) clamp(56px,8vw,88px);
+    overflow:hidden;
+  }
+  .hero-mark{
+    position:absolute;
+    left:50%;top:40%;
+    width:min(420px,60vw);
+    transform:translate(-50%,-50%);
+    opacity:0.05;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:1;}
+  .hero-brand{
+    display:flex;flex-direction:column;align-items:center;
+    margin-bottom:26px;
+  }
+  .hero-brand img{width:min(190px,42vw);height:auto;}
+  .hero h1{
+    font-size:clamp(2.4rem,5.6vw,3.9rem);
+    max-width:16ch;margin-inline:auto;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-deep);}
+  .hero .lede{margin:24px auto 0;text-align:center;font-size:1.1rem;}
+  .hero-actions{
+    display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:34px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;font-weight:700;font-size:0.9rem;letter-spacing:0.01em;
+    border:1px solid transparent;
+  }
+  .btn-solid{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .btn-solid:hover{background:var(--gold-deep);border-color:var(--gold-deep);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--gold-deep);color:var(--gold-deep);}
+  .btn-ghost-navy{border-color:var(--text-on-navy-soft);color:var(--text-on-navy);}
+  .btn-ghost-navy:hover{border-color:var(--gold-on-navy);color:var(--gold-on-navy);}
+
+  /* ---------- section shell ---------- */
+  section{padding-block:clamp(60px,8vw,100px);}
+  .section-divider{border-top:1px solid var(--line);}
+  .section-head{margin-bottom:clamp(38px,5vw,56px);}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.4rem);margin-top:12px;}
+  .section-note{margin-top:16px;font-size:0.98rem;}
+
+  /* ---------- who we are ---------- */
+  .who-grid{
+    display:grid;grid-template-columns:1.05fr 1fr;
+    gap:clamp(36px,5vw,64px);align-items:start;
+  }
+  .who-copy .lede + .lede{margin-top:16px;}
+  .pillars{display:flex;flex-direction:column;gap:18px;}
+  .pillar{
+    background:var(--paper-2);border:1px solid var(--line);padding:24px 26px;
+  }
+  .pillar h3{font-size:1.15rem;color:var(--gold-deep);margin-bottom:8px;}
+  .pillar p{font-size:0.93rem;line-height:1.62;color:var(--ink-soft);}
+  @media (max-width:820px){.who-grid{grid-template-columns:1fr;}}
+
+  /* ---------- services / divisions ---------- */
+  .divisions{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;
+  }
+  .division{
+    background:var(--paper-2);border:1px solid var(--line);
+    padding:clamp(26px,3vw,34px) clamp(24px,3vw,30px);
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .division-num{
+    font-family:'Cormorant',serif;font-size:0.85rem;color:var(--gold);letter-spacing:0.08em;
+  }
+  .division-icon{width:32px;height:32px;color:var(--gold-deep);}
+  .division h3{font-size:1.32rem;}
+  .division .tag{font-size:0.92rem;color:var(--gold-deep);font-weight:700;}
+  .division p.desc{font-size:0.9rem;color:var(--ink-soft);line-height:1.58;}
+  .division ul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .division li{
+    font-size:0.87rem;color:var(--ink-soft);padding-left:15px;position:relative;line-height:1.5;
+  }
+  .division li::before{
+    content:'';position:absolute;left:0;top:0.6em;width:6px;height:1px;background:var(--gold);
+  }
+  .division li.headline{
+    color:var(--ink);font-weight:700;
+  }
+  @media (max-width:900px){.divisions{grid-template-columns:1fr;}}
+
+  /* ---------- work ---------- */
+  .work-feature{
+    border:1px solid var(--line);background:var(--paper-2);
+    padding:clamp(28px,3vw,40px);margin-bottom:22px;
+  }
+  .work-flag{
+    display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px;
+  }
+  .work-feature h3{font-size:1.5rem;margin-bottom:12px;}
+  .work-feature p{font-size:0.96rem;line-height:1.65;color:var(--ink-soft);max-width:64ch;}
+  .work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+  .work-card{border:1px solid var(--line);background:var(--paper-2);padding:26px 28px;}
+  .work-card h3{font-size:1.2rem;margin-bottom:10px;}
+  .work-card p{font-size:0.92rem;line-height:1.6;color:var(--ink-soft);}
+  @media (max-width:700px){.work-grid{grid-template-columns:1fr;}}
+
+  /* ---------- why + values ---------- */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,76px);}
+  .listcol h3{
+    font-size:1.02rem;text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--gold-deep);margin-bottom:20px;font-family:'Manrope',sans-serif;font-weight:700;
+  }
+  .listcol ol{list-style:none;margin:0;padding:0;counter-reset:n;}
+  .listcol li{
+    counter-increment:n;display:flex;gap:16px;padding-block:15px;
+    border-top:1px solid var(--line);
+  }
+  .listcol li:last-child{border-bottom:1px solid var(--line);}
+  .listcol li::before{
+    content:counter(n,decimal-leading-zero);
+    font-family:'Cormorant',serif;font-size:1.05rem;color:var(--gold);flex:none;padding-top:2px;
+  }
+  .listcol li p{font-size:0.93rem;color:var(--ink-soft);line-height:1.55;}
+  .listcol li b{color:var(--ink);display:block;margin-bottom:2px;font-size:0.98rem;}
+  @media (max-width:820px){.why-grid{grid-template-columns:1fr;}}
+
+  /* ---------- trust strip ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:24px;}
+  .trust .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .trust-badge{display:flex;align-items:center;gap:14px;}
+  .trust-badge .ring{
+    width:42px;height:42px;border-radius:50%;border:1.5px solid var(--gold-deep);
+    display:flex;align-items:center;justify-content:center;color:var(--gold-deep);
+    font-family:'Cormorant',serif;font-weight:600;font-size:1.05rem;flex:none;
+  }
+  .trust-badge b{display:block;font-size:0.94rem;}
+  .trust-badge span{display:block;font-size:0.8rem;color:var(--ink-soft);}
+  .trust-note{font-size:0.8rem;color:var(--ink-soft);}
+
+  /* ---------- contact (navy) ---------- */
+  .contact{background:var(--navy);color:var(--text-on-navy);text-align:center;}
+  .contact .eyebrow{color:var(--gold-on-navy);}
+  .contact h2{font-size:clamp(2.1rem,4.6vw,3rem);max-width:20ch;margin-inline:auto;color:var(--text-on-navy);}
+  .contact .rule{background:var(--gold-on-navy);}
+  .contact .lede{margin:22px auto 0;color:var(--text-on-navy-soft);text-align:center;}
+  .contact-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:36px;}
+  .whatsapp{
+    display:inline-flex;align-items:center;gap:10px;background:var(--navy-2);
+    border:1px solid rgba(201,162,92,0.3);padding:14px 22px;font-weight:700;font-size:0.92rem;
+  }
+  .whatsapp:hover{border-color:var(--gold-on-navy);}
+  .whatsapp svg{width:19px;height:19px;color:#3FCB6E;flex:none;}
+  .whatsapp span{font-variant-numeric:tabular-nums;color:var(--text-on-navy);}
+  .whatsapp small{
+    display:block;color:var(--text-on-navy-soft);font-weight:600;font-size:0.7rem;
+    letter-spacing:0.04em;text-transform:uppercase;
+  }
+  .whatsapp.plain svg{color:var(--gold-on-navy);}
+
+  /* ---------- gallery teaser ---------- */
+  .teaser-panel{
+    display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,56px);
+    align-items:center;border:1px solid var(--line);background:var(--paper-2);
+    padding:clamp(26px,3vw,36px);
+  }
+  .teaser-shots{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  }
+  .teaser-shots img{
+    width:100%;height:130px;object-fit:cover;display:block;
+    border:1px solid var(--line);
+  }
+  .teaser-shots img:nth-child(1){margin-top:22px;}
+  .teaser-shots img:nth-child(4){margin-top:-22px;}
+  @media (max-width:820px){
+    .teaser-panel{grid-template-columns:1fr;}
+    .teaser-shots{order:2;}
+    .teaser-shots img:nth-child(1),.teaser-shots img:nth-child(4){margin-top:0;}
+  }
+
+  /* ---------- footer ---------- */
+  footer{background:#121A2C;color:var(--text-on-navy-soft);padding-block:38px;}
+  .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:var(--text-on-navy);}
+  .foot-brand .mark{width:20px;height:auto;}
+  .foot-legal{font-size:0.82rem;line-height:1.6;max-width:38ch;margin-top:10px;}
+  .foot-divs{display:flex;gap:28px;flex-wrap:wrap;font-size:0.84rem;}
+  .foot-divs div b{display:block;color:var(--text-on-navy);font-weight:700;margin-bottom:6px;}
+  .foot-bottom{
+    margin-top:30px;padding-top:18px;border-top:1px solid rgba(201,162,92,0.18);
+    font-size:0.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+</style>
+</head>
+<body>
+
+
+
+<!-- nav -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img class="mark" src="assets/images/logo_icon.png" alt="V Group logo">
+      <span class="brand-word">V Group</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#who">Who We Are</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#why">Why Us</a>
+      <a class="nav-cta" href="#contact">Talk to us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- hero -->
+<header class="hero" id="top">
+  <img class="hero-mark" src="assets/images/logo_icon.png" alt="" aria-hidden="true">
+  <div class="wrap hero-inner">
+    <div class="hero-brand">
+      <img src="assets/images/logo_full.png" alt="V Group">
+    </div>
+    <h1>Today&rsquo;s solutions&hellip; <em>Tomorrow&rsquo;s</em> success.</h1>
+    <div class="rule center"></div>
+    <p class="lede">V Group is a Saudi business group built to help companies establish, grow and evolve &mdash; bringing technology, smart environments and workplace readiness together under one roof.</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#contact">Start a conversation</a>
+      <a class="btn btn-ghost" href="#services">See our services</a>
+    </div>
+  </div>
+</header>
+
+<!-- who we are -->
+<section class="section-divider" id="who">
+  <div class="wrap">
+    <div class="who-grid">
+      <div class="who-copy">
+        <p class="eyebrow">Who we are</p>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin-top:12px;margin-bottom:8px;">A business group built around one belief.</h2>
+        <div class="rule"></div>
+        <p class="lede" style="margin-top:22px;">Every company&rsquo;s success starts with a strong foundation. V Group was founded in 2026 to help organisations accelerate their digital transformation &mdash; through technology consulting, automation and intelligent systems that lift operational efficiency and productivity.</p>
+        <p class="lede">We combine practical solutions with quality, innovation and a genuine understanding of what each client needs, so we can be a trusted partner throughout the growth journey &mdash; not just a vendor for a single project.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Vision</h3>
+          <p>To be among the most prominent business groups delivering integrated solutions that support institutional growth &mdash; building businesses that are more efficient, intelligent and sustainable.</p>
+        </div>
+        <div class="pillar">
+          <h3>Mission</h3>
+          <p>Empowering companies to reach their goals through solutions that combine technology, operational expertise and high quality &mdash; while building long-term relationships founded on trust.</p>
+        </div>
+        <div class="pillar">
+          <h3>Strategic Goal</h3>
+          <p>Strengthening our position in the technology sector through innovative solutions, expansion into target markets, strategic partnerships, and digital products that support sustainable growth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- services -->
+<section class="section-divider" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>Three divisions. Three clear services.</h2>
+      <div class="rule"></div>
+      <p class="lede section-note">Rather than assembling separate vendors, partners work with one group that understands the whole picture &mdash; the systems, the spaces, and the office they run in.</p>
+    </div>
+    <div class="divisions">
+      <div class="division">
+        <span class="division-num">01 &mdash; V Technology</span>
+        <svg class="division-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="5" r="2.4" stroke="currentColor" stroke-width="1.4"/><circle cx="5" cy="19" r="2.4" stroke="currentColor" stroke-width="1.4"/><circle cx="19" cy="19" r="2.4" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.4V13M12 13 6.6 17.2M12 13l5.4 4.2" stroke="currentColor" stroke-width="1.4"/></svg>
+        <h3>Websites, ERP &amp; CRM</h3>
+        <p class="tag">Building the systems your business runs on</p>
+        <p class="desc">We design and build custom websites, ERP and CRM systems shaped around how your business actually works &mdash; not off-the-shelf templates.</p>
+        <ul>
+          <li class="headline">Custom websites &amp; web platforms</li>
+          <li class="headline">ERP systems</li>
+          <li class="headline">CRM systems</li>
+          <li>Data dashboards &amp; reporting</li>
+          <li>Systems integration &amp; support</li>
+        </ul>
+      </div>
+      <div class="division">
+        <span class="division-num">02 &mdash; V Smart Homes</span>
+        <svg class="division-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11 12 4l8 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8.5" stroke="currentColor" stroke-width="1.4"/><rect x="10" y="14" width="4" height="6" stroke="currentColor" stroke-width="1.4"/></svg>
+        <h3>Smart Home Devices</h3>
+        <p class="tag">Supplied by our partners, installed by us</p>
+        <p class="desc">We supply smart home devices through our technology partners and handle every step of installation, from planning to setup.</p>
+        <ul>
+          <li class="headline">Smart home devices (partner brands)</li>
+          <li class="headline">Professional installation</li>
+          <li>Automation &amp; controls</li>
+          <li>Configuration &amp; handover</li>
+          <li>After-installation support</li>
+        </ul>
+      </div>
+      <div class="division">
+        <span class="division-num">03 &mdash; V Office Solutions</span>
+        <svg class="division-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="11" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M9 19.5h6M12 16v3.5" stroke="currentColor" stroke-width="1.4"/></svg>
+        <h3>Smart Meeting Rooms &amp; Office</h3>
+        <p class="tag">Everything a workplace needs to run</p>
+        <p class="desc">From smart, fully-equipped meeting rooms to the everyday equipment an office depends on &mdash; sourced, installed and supported.</p>
+        <ul>
+          <li class="headline">Smart meeting rooms</li>
+          <li>Computers &amp; technical equipment</li>
+          <li>Office fit-out &amp; supplies</li>
+          <li>Printing &amp; communications</li>
+          <li>Installation &amp; technical support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- work -->
+<section class="section-divider" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>Products our partners run on today.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="work-feature">
+      <span class="work-flag">Flagship platform</span>
+      <h3>Jusoor &mdash; a verified marketplace for buying and selling businesses</h3>
+      <p>Built end-to-end for a strategic partner &mdash; from concept and design through development, deployment and ongoing support. Jusoor lets investors and owners browse verified, revenue-generating businesses across Saudi Arabia, protected by verified listings and transparent deal data.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <span class="work-flag">HR system</span>
+        <h3>AinHR</h3>
+        <p>An intelligent HR management system sized to each organisation, with an executive dashboard that turns attendance and workforce data into real-time decisions.</p>
+      </div>
+      <div class="work-card">
+        <span class="work-flag">Custom CRM</span>
+        <h3>Pipeline &amp; revenue, one live view</h3>
+        <p>A CRM shaped around each partner&rsquo;s own workflow &mdash; quotations, active projects and revenue tracked through dashboards built for how the team actually works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- gallery teaser -->
+<section class="section-divider" id="gallery-teaser">
+  <div class="wrap">
+    <div class="teaser-panel">
+      <div class="teaser-shots" aria-hidden="true">
+        <img src="assets/images/jusoor_hero.jpg" alt="">
+        <img src="assets/images/ainhr_dashboard.jpg" alt="">
+        <img src="assets/images/crm_pipeline.jpg" alt="">
+        <img src="assets/images/office_desks.jpg" alt="">
+      </div>
+      <div class="teaser-copy">
+        <p class="eyebrow">Gallery &amp; catalogue</p>
+        <h2 style="margin-top:10px;">See the work up close, and browse our full catalogue.</h2>
+        <div class="rule"></div>
+        <p class="lede" style="margin-top:18px;">Screenshots from Jusoor, AinHR and our custom CRM, photos from office fit-outs we&rsquo;ve delivered, and our complete services catalogue as a viewable PDF.</p>
+        <a class="btn btn-solid" style="margin-top:24px;" href="gallery.html">Open Gallery &amp; Catalogue</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- why + values -->
+<section class="section-divider" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why V Group</p>
+      <h2>What we bring to the table.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="why-grid">
+      <div class="listcol">
+        <h3>Why partners choose us</h3>
+        <ol>
+          <li><p><b>Integrated solutions, one place</b>Technology, smart environments and office readiness &mdash; coordinated, not outsourced piecemeal.</p></li>
+          <li><p><b>We understand needs from the inside</b>Our team has run these operations, not just built systems for them.</p></li>
+          <li><p><b>Technology paired with operational expertise</b>Systems are shaped by how the work actually happens.</p></li>
+          <li><p><b>Focused on value, not just the sale</b>Success is measured by outcomes delivered, not contracts signed.</p></li>
+          <li><p><b>Long-term partnership</b>We stay involved after launch &mdash; support, iteration, and growth.</p></li>
+        </ol>
+      </div>
+      <div class="listcol">
+        <h3>Our values</h3>
+        <ol>
+          <li><p><b>Trust</b>We build long-term relationships with our clients.</p></li>
+          <li><p><b>Quality</b>We deliver solutions we&rsquo;d stake our name on.</p></li>
+          <li><p><b>Innovation</b>We use technology to create real value.</p></li>
+          <li><p><b>Commitment</b>We keep our promises.</p></li>
+          <li><p><b>Partnership</b>Our client&rsquo;s success is part of our own.</p></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- trust strip -->
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-badge">
+      <span class="ring">O</span>
+      <div>
+        <b>Authorized Partner &mdash; Optimus Solutions</b>
+        <span>Designated partner, Kingdom of Saudi Arabia &middot; certified through Dec 2027</span>
+      </div>
+    </div>
+    <p class="trust-note">Certificate issued by Optimus Solutions Teknoloji &Uuml;retim Sanayi Ticaret A.&Scedil;., &Iuml;stanbul</p>
+  </div>
+</div>
+
+<!-- contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Get in touch</p>
+    <h2 style="margin-top:12px;">Let&rsquo;s build what&rsquo;s next for your business.</h2>
+    <div class="rule center"></div>
+    <p class="lede">Our team is ready to talk through your project and put the right division &mdash; or all three &mdash; to work for you.</p>
+    <div class="contact-actions">
+      <a class="whatsapp" href="https://wa.me/966508269914" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.27 4.9L2 22l5.32-1.35a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.25.7-1.24 1.3-1.9 1.42-.5.09-1.16.16-3.36-.72-2.82-1.16-4.64-4.03-4.78-4.22-.14-.19-1.14-1.52-1.14-2.9 0-1.37.72-2.05.98-2.33.25-.28.55-.35.73-.35.19 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.84 2.06.91 2.22.07.15.12.34.02.53-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.28.7 1.16 1.51 1.89 1.04.94 1.91 1.24 2.19 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.18 1.38z"/></svg>
+        <span><small>WhatsApp</small>+966 50 826 9914</span>
+      </a>
+      <a class="whatsapp" href="https://wa.me/966583551154" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.27 4.9L2 22l5.32-1.35a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.25.7-1.24 1.3-1.9 1.42-.5.09-1.16.16-3.36-.72-2.82-1.16-4.64-4.03-4.78-4.22-.14-.19-1.14-1.52-1.14-2.9 0-1.37.72-2.05.98-2.33.25-.28.55-.35.73-.35.19 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.84 2.06.91 2.22.07.15.12.34.02.53-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.28.7 1.16 1.51 1.89 1.04.94 1.91 1.24 2.19 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.18 1.38z"/></svg>
+        <span><small>WhatsApp</small>+966 58 355 1154</span>
+      </a>
+      <a class="whatsapp" href="https://wa.me/966543085598" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.27 4.9L2 22l5.32-1.35a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.25.7-1.24 1.3-1.9 1.42-.5.09-1.16.16-3.36-.72-2.82-1.16-4.64-4.03-4.78-4.22-.14-.19-1.14-1.52-1.14-2.9 0-1.37.72-2.05.98-2.33.25-.28.55-.35.73-.35.19 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.84 2.06.91 2.22.07.15.12.34.02.53-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.28.7 1.16 1.51 1.89 1.04.94 1.91 1.24 2.19 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.18 1.38z"/></svg>
+        <span><small>WhatsApp</small>+966 54 308 5598</span>
+      </a>
+      <a class="whatsapp plain" href="mailto:V_Group_SA@outlook.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.4"/><path d="m4.5 6.5 7.5 6.2 7.5-6.2"/></svg>
+        <span><small>Email</small>V_Group_SA@outlook.com</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-brand">
+        <img class="mark" src="assets/images/logo_icon.png" alt="V Group logo">
+        <span class="brand-word" style="font-size:1.1rem;">V Group</span>
+      </div>
+      <p class="foot-legal">Double V C &middot; Kingdom of Saudi Arabia<br>Registered trade name of V Group, founded 2026.</p>
+    </div>
+    <div class="foot-divs">
+      <div><b>Divisions</b>V Technology<br>V Smart Homes<br>V Office Solutions</div>
+      <div><b>Contact</b>+966 50 826 9914<br>+966 58 355 1154<br>+966 54 308 5598<br>V_Group_SA@outlook.com</div>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>&copy; 2026 V Group. All rights reserved.</span>
+    <span>Today&rsquo;s Solutions &hellip; Tomorrow&rsquo;s Success</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
