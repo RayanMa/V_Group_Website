@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>V Group</title>
 <link rel="icon" type="image/png" href="assets/images/logo_icon.png">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&family=Cairo:wght@600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
 
   :root{
     --paper:#F7F2E6;
@@ -44,6 +44,19 @@
   }
   p{margin:0;}
   a{color:inherit;text-decoration:none;}
+
+  html[dir="rtl"] body{font-family:'Tajawal','Manrope',system-ui,sans-serif;}
+  html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3{font-family:'Cairo','Cormorant',serif;}
+  html[dir="rtl"] .division-num,html[dir="rtl"] .listcol li::before,html[dir="rtl"] .brand-word{font-family:'Cairo','Cormorant',serif;}
+
+  /* ---------- language toggle ---------- */
+  .lang-toggle{
+    background:none;border:1px solid var(--line);color:var(--ink-soft);
+    font-family:'Manrope',sans-serif;font-weight:700;font-size:0.78rem;
+    padding:7px 14px;cursor:pointer;letter-spacing:0.01em;
+  }
+  .lang-toggle:hover{border-color:var(--gold-deep);color:var(--gold-deep);}
+  html[dir="rtl"] .lang-toggle{font-family:'Tajawal','Manrope',sans-serif;}
 
   .wrap{
     max-width:1140px;
@@ -133,6 +146,7 @@
     .nav-links.open{display:flex;}
     .nav-links a{padding-block:12px;width:100%;border-top:1px solid var(--line);}
     .nav-links .nav-cta{width:100%;text-align:center;margin-top:14px;border-top:none;}
+    .nav-links .lang-toggle{width:100%;text-align:center;margin-top:10px;}
     .nav-toggle{
       display:flex;flex-direction:column;justify-content:center;gap:5px;
       width:34px;height:34px;background:none;border:1px solid var(--line);
@@ -222,10 +236,10 @@
   .division p.desc{font-size:0.9rem;color:var(--ink-soft);line-height:1.58;}
   .division ul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;}
   .division li{
-    font-size:0.87rem;color:var(--ink-soft);padding-left:15px;position:relative;line-height:1.5;
+    font-size:0.87rem;color:var(--ink-soft);padding-inline-start:15px;position:relative;line-height:1.5;
   }
   .division li::before{
-    content:'';position:absolute;left:0;top:0.6em;width:6px;height:1px;background:var(--gold);
+    content:'';position:absolute;inset-inline-start:0;top:0.6em;width:6px;height:1px;background:var(--gold);
   }
   .division li.headline{
     color:var(--ink);font-weight:700;
@@ -346,18 +360,19 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top">
       <img class="mark" src="assets/images/logo_icon.png" alt="V Group logo">
-      <span class="brand-word">V Group</span>
+      <span class="brand-word" data-i18n="brand_word">V Group</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
-      <a href="#who">Who We Are</a>
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="#why">Why Us</a>
-      <a class="nav-cta" href="#contact">Talk to us</a>
+      <a href="#who" data-i18n="nav_who">Who We Are</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+      <a href="#why" data-i18n="nav_why">Why Us</a>
+      <a class="nav-cta" href="#contact" data-i18n="nav_cta">Talk to us</a>
+      <button class="lang-toggle" type="button">العربية</button>
     </div>
   </div>
 </nav>
@@ -369,12 +384,12 @@
     <div class="hero-brand">
       <img src="assets/images/logo_full.png" alt="V Group">
     </div>
-    <h1>Today&rsquo;s solutions&hellip; <em>Tomorrow&rsquo;s</em> success.</h1>
+    <h1 data-i18n="hero_h1">Today&rsquo;s solutions&hellip; <em>Tomorrow&rsquo;s</em> success.</h1>
     <div class="rule center"></div>
-    <p class="lede">V Group is a Saudi business group built to help companies establish, grow and evolve &mdash; bringing technology, smart environments and workplace readiness together under one roof.</p>
+    <p class="lede" data-i18n="hero_lede">V Group is a Saudi business group built to help companies establish, grow and evolve &mdash; bringing technology, smart environments and workplace readiness together under one roof.</p>
     <div class="hero-actions">
-      <a class="btn btn-solid" href="#contact">Start a conversation</a>
-      <a class="btn btn-ghost" href="#services">See our services</a>
+      <a class="btn btn-solid" href="#contact" data-i18n="hero_btn1">Start a conversation</a>
+      <a class="btn btn-ghost" href="#services" data-i18n="hero_btn2">See our services</a>
     </div>
   </div>
 </header>
@@ -384,24 +399,24 @@
   <div class="wrap">
     <div class="who-grid">
       <div class="who-copy">
-        <p class="eyebrow">Who we are</p>
-        <h2 style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin-top:12px;margin-bottom:8px;">A business group built around one belief.</h2>
+        <p class="eyebrow" data-i18n="who_eyebrow">Who we are</p>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin-top:12px;margin-bottom:8px;" data-i18n="who_h2">A business group built around one belief.</h2>
         <div class="rule"></div>
-        <p class="lede" style="margin-top:22px;">Every company&rsquo;s success starts with a strong foundation. V Group was founded in 2026 to help organisations accelerate their digital transformation &mdash; through technology consulting, automation and intelligent systems that lift operational efficiency and productivity.</p>
-        <p class="lede">We combine practical solutions with quality, innovation and a genuine understanding of what each client needs, so we can be a trusted partner throughout the growth journey &mdash; not just a vendor for a single project.</p>
+        <p class="lede" style="margin-top:22px;" data-i18n="who_p1">Every company&rsquo;s success starts with a strong foundation. V Group was founded in 2026 to help organisations accelerate their digital transformation &mdash; through technology consulting, automation and intelligent systems that lift operational efficiency and productivity.</p>
+        <p class="lede" data-i18n="who_p2">We combine practical solutions with quality, innovation and a genuine understanding of what each client needs, so we can be a trusted partner throughout the growth journey &mdash; not just a vendor for a single project.</p>
       </div>
       <div class="pillars">
         <div class="pillar">
-          <h3>Vision</h3>
-          <p>To be among the most prominent business groups delivering integrated solutions that support institutional growth &mdash; building businesses that are more efficient, intelligent and sustainable.</p>
+          <h3 data-i18n="pillar1_h">Vision</h3>
+          <p data-i18n="pillar1_p">To be among the most prominent business groups delivering integrated solutions that support institutional growth &mdash; building businesses that are more efficient, intelligent and sustainable.</p>
         </div>
         <div class="pillar">
-          <h3>Mission</h3>
-          <p>Empowering companies to reach their goals through solutions that combine technology, operational expertise and high quality &mdash; while building long-term relationships founded on trust.</p>
+          <h3 data-i18n="pillar2_h">Mission</h3>
+          <p data-i18n="pillar2_p">Empowering companies to reach their goals through solutions that combine technology, operational expertise and high quality &mdash; while building long-term relationships founded on trust.</p>
         </div>
         <div class="pillar">
-          <h3>Strategic Goal</h3>
-          <p>Strengthening our position in the technology sector through innovative solutions, expansion into target markets, strategic partnerships, and digital products that support sustainable growth.</p>
+          <h3 data-i18n="pillar3_h">Strategic Goal</h3>
+          <p data-i18n="pillar3_p">Strengthening our position in the technology sector through innovative solutions, expansion into target markets, strategic partnerships, and digital products that support sustainable growth.</p>
         </div>
       </div>
     </div>
@@ -412,52 +427,52 @@
 <section class="section-divider" id="services">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">What we do</p>
-      <h2>Three divisions. Three clear services.</h2>
+      <p class="eyebrow" data-i18n="services_eyebrow">What we do</p>
+      <h2 data-i18n="services_h2">Three divisions. Three clear services.</h2>
       <div class="rule"></div>
-      <p class="lede section-note">Rather than assembling separate vendors, partners work with one group that understands the whole picture &mdash; the systems, the spaces, and the office they run in.</p>
+      <p class="lede section-note" data-i18n="services_note">Rather than assembling separate vendors, partners work with one group that understands the whole picture &mdash; the systems, the spaces, and the office they run in.</p>
     </div>
     <div class="divisions">
       <div class="division">
-        <span class="division-num">01 &mdash; V Technology</span>
+        <span class="division-num" data-i18n="div1_num">01 &mdash; V Technology</span>
         <svg class="division-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="5" r="2.4" stroke="currentColor" stroke-width="1.4"/><circle cx="5" cy="19" r="2.4" stroke="currentColor" stroke-width="1.4"/><circle cx="19" cy="19" r="2.4" stroke="currentColor" stroke-width="1.4"/><path d="M12 7.4V13M12 13 6.6 17.2M12 13l5.4 4.2" stroke="currentColor" stroke-width="1.4"/></svg>
-        <h3>Websites, ERP &amp; CRM</h3>
-        <p class="tag">Building the systems your business runs on</p>
-        <p class="desc">We design and build custom websites, ERP and CRM systems shaped around how your business actually works &mdash; not off-the-shelf templates.</p>
+        <h3 data-i18n="div1_h3">Websites, ERP &amp; CRM</h3>
+        <p class="tag" data-i18n="div1_tag">Building the systems your business runs on</p>
+        <p class="desc" data-i18n="div1_desc">We design and build custom websites, ERP and CRM systems shaped around how your business actually works &mdash; not off-the-shelf templates.</p>
         <ul>
-          <li class="headline">Custom websites &amp; web platforms</li>
-          <li class="headline">ERP systems</li>
-          <li class="headline">CRM systems</li>
-          <li>Data dashboards &amp; reporting</li>
-          <li>Systems integration &amp; support</li>
+          <li class="headline" data-i18n="div1_li1">Custom websites &amp; web platforms</li>
+          <li class="headline" data-i18n="div1_li2">ERP systems</li>
+          <li class="headline" data-i18n="div1_li3">CRM systems</li>
+          <li data-i18n="div1_li4">Data dashboards &amp; reporting</li>
+          <li data-i18n="div1_li5">Systems integration &amp; support</li>
         </ul>
       </div>
       <div class="division">
-        <span class="division-num">02 &mdash; V Smart Homes</span>
+        <span class="division-num" data-i18n="div2_num">02 &mdash; V Smart Homes</span>
         <svg class="division-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 11 12 4l8 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8.5" stroke="currentColor" stroke-width="1.4"/><rect x="10" y="14" width="4" height="6" stroke="currentColor" stroke-width="1.4"/></svg>
-        <h3>Smart Home Devices</h3>
-        <p class="tag">Supplied by our partners, installed by us</p>
-        <p class="desc">We supply smart home devices through our technology partners and handle every step of installation, from planning to setup.</p>
+        <h3 data-i18n="div2_h3">Smart Home Devices</h3>
+        <p class="tag" data-i18n="div2_tag">Supplied by our partners, installed by us</p>
+        <p class="desc" data-i18n="div2_desc">We supply smart home devices through our technology partners and handle every step of installation, from planning to setup.</p>
         <ul>
-          <li class="headline">Smart home devices (partner brands)</li>
-          <li class="headline">Professional installation</li>
-          <li>Automation &amp; controls</li>
-          <li>Configuration &amp; handover</li>
-          <li>After-installation support</li>
+          <li class="headline" data-i18n="div2_li1">Smart home devices (partner brands)</li>
+          <li class="headline" data-i18n="div2_li2">Professional installation</li>
+          <li data-i18n="div2_li3">Automation &amp; controls</li>
+          <li data-i18n="div2_li4">Configuration &amp; handover</li>
+          <li data-i18n="div2_li5">After-installation support</li>
         </ul>
       </div>
       <div class="division">
-        <span class="division-num">03 &mdash; V Office Solutions</span>
+        <span class="division-num" data-i18n="div3_num">03 &mdash; V Office Solutions</span>
         <svg class="division-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="11" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M9 19.5h6M12 16v3.5" stroke="currentColor" stroke-width="1.4"/></svg>
-        <h3>Smart Meeting Rooms &amp; Office</h3>
-        <p class="tag">Everything a workplace needs to run</p>
-        <p class="desc">From smart, fully-equipped meeting rooms to the everyday equipment an office depends on &mdash; sourced, installed and supported.</p>
+        <h3 data-i18n="div3_h3">Smart Meeting Rooms &amp; Office</h3>
+        <p class="tag" data-i18n="div3_tag">Everything a workplace needs to run</p>
+        <p class="desc" data-i18n="div3_desc">From smart, fully-equipped meeting rooms to the everyday equipment an office depends on &mdash; sourced, installed and supported.</p>
         <ul>
-          <li class="headline">Smart meeting rooms</li>
-          <li>Computers &amp; technical equipment</li>
-          <li>Office fit-out &amp; supplies</li>
-          <li>Printing &amp; communications</li>
-          <li>Installation &amp; technical support</li>
+          <li class="headline" data-i18n="div3_li1">Smart meeting rooms</li>
+          <li data-i18n="div3_li2">Computers &amp; technical equipment</li>
+          <li data-i18n="div3_li3">Office fit-out &amp; supplies</li>
+          <li data-i18n="div3_li4">Printing &amp; communications</li>
+          <li data-i18n="div3_li5">Installation &amp; technical support</li>
         </ul>
       </div>
     </div>
@@ -468,25 +483,25 @@
 <section class="section-divider" id="work">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Selected work</p>
-      <h2>Products our partners run on today.</h2>
+      <p class="eyebrow" data-i18n="work_eyebrow">Selected work</p>
+      <h2 data-i18n="work_h2">Products our partners run on today.</h2>
       <div class="rule"></div>
     </div>
     <div class="work-feature">
-      <span class="work-flag">Flagship platform</span>
-      <h3>Jusoor &mdash; a verified marketplace for buying and selling businesses</h3>
-      <p>Built end-to-end for a strategic partner &mdash; from concept and design through development, deployment and ongoing support. Jusoor lets investors and owners browse verified, revenue-generating businesses across Saudi Arabia, protected by verified listings and transparent deal data.</p>
+      <span class="work-flag" data-i18n="work_flag1">Flagship platform</span>
+      <h3 data-i18n="work_h3_1">Jusoor &mdash; a verified marketplace for buying and selling businesses</h3>
+      <p data-i18n="work_p1">Built end-to-end for a strategic partner &mdash; from concept and design through development, deployment and ongoing support. Jusoor lets investors and owners browse verified, revenue-generating businesses across Saudi Arabia, protected by verified listings and transparent deal data.</p>
     </div>
     <div class="work-grid">
       <div class="work-card">
-        <span class="work-flag">HR system</span>
-        <h3>AinHR</h3>
-        <p>An intelligent HR management system sized to each organisation, with an executive dashboard that turns attendance and workforce data into real-time decisions.</p>
+        <span class="work-flag" data-i18n="work_flag2">HR system</span>
+        <h3 data-i18n="work_h3_2">AinHR</h3>
+        <p data-i18n="work_p2">An intelligent HR management system sized to each organisation, with an executive dashboard that turns attendance and workforce data into real-time decisions.</p>
       </div>
       <div class="work-card">
-        <span class="work-flag">Custom CRM</span>
-        <h3>Pipeline &amp; revenue, one live view</h3>
-        <p>A CRM shaped around each partner&rsquo;s own workflow &mdash; quotations, active projects and revenue tracked through dashboards built for how the team actually works.</p>
+        <span class="work-flag" data-i18n="work_flag3">Custom CRM</span>
+        <h3 data-i18n="work_h3_3">Pipeline &amp; revenue, one live view</h3>
+        <p data-i18n="work_p3">A CRM shaped around each partner&rsquo;s own workflow &mdash; quotations, active projects and revenue tracked through dashboards built for how the team actually works.</p>
       </div>
     </div>
   </div>
@@ -503,11 +518,11 @@
         <img src="assets/images/office_desks.jpg" alt="">
       </div>
       <div class="teaser-copy">
-        <p class="eyebrow">Gallery &amp; catalogue</p>
-        <h2 style="margin-top:10px;">See the work up close, and browse our full catalogue.</h2>
+        <p class="eyebrow" data-i18n="teaser_eyebrow">Gallery &amp; catalogue</p>
+        <h2 style="margin-top:10px;" data-i18n="teaser_h2">See the work up close, and browse our full catalogue.</h2>
         <div class="rule"></div>
-        <p class="lede" style="margin-top:18px;">Screenshots from Jusoor, AinHR and our custom CRM, photos from office fit-outs we&rsquo;ve delivered, and our complete services catalogue as a viewable PDF.</p>
-        <a class="btn btn-solid" style="margin-top:24px;" href="gallery.html">Open Gallery &amp; Catalogue</a>
+        <p class="lede" style="margin-top:18px;" data-i18n="teaser_p">Screenshots from Jusoor, AinHR and our custom CRM, photos from office fit-outs we&rsquo;ve delivered, and our complete services catalogue as a viewable PDF.</p>
+        <a class="btn btn-solid" style="margin-top:24px;" href="gallery.html" data-i18n="teaser_btn">Open Gallery &amp; Catalogue</a>
       </div>
     </div>
   </div>
@@ -517,29 +532,29 @@
 <section class="section-divider" id="why">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Why V Group</p>
-      <h2>What we bring to the table.</h2>
+      <p class="eyebrow" data-i18n="why_eyebrow">Why V Group</p>
+      <h2 data-i18n="why_h2">What we bring to the table.</h2>
       <div class="rule"></div>
     </div>
     <div class="why-grid">
       <div class="listcol">
-        <h3>Why partners choose us</h3>
+        <h3 data-i18n="why_col_h">Why partners choose us</h3>
         <ol>
-          <li><p><b>Integrated solutions, one place</b>Technology, smart environments and office readiness &mdash; coordinated, not outsourced piecemeal.</p></li>
-          <li><p><b>We understand needs from the inside</b>Our team has run these operations, not just built systems for them.</p></li>
-          <li><p><b>Technology paired with operational expertise</b>Systems are shaped by how the work actually happens.</p></li>
-          <li><p><b>Focused on value, not just the sale</b>Success is measured by outcomes delivered, not contracts signed.</p></li>
-          <li><p><b>Long-term partnership</b>We stay involved after launch &mdash; support, iteration, and growth.</p></li>
+          <li><p><b data-i18n="why1_b">Integrated solutions, one place</b><span data-i18n="why1_p">Technology, smart environments and office readiness &mdash; coordinated, not outsourced piecemeal.</span></p></li>
+          <li><p><b data-i18n="why2_b">We understand needs from the inside</b><span data-i18n="why2_p">Our team has run these operations, not just built systems for them.</span></p></li>
+          <li><p><b data-i18n="why3_b">Technology paired with operational expertise</b><span data-i18n="why3_p">Systems are shaped by how the work actually happens.</span></p></li>
+          <li><p><b data-i18n="why4_b">Focused on value, not just the sale</b><span data-i18n="why4_p">Success is measured by outcomes delivered, not contracts signed.</span></p></li>
+          <li><p><b data-i18n="why5_b">Long-term partnership</b><span data-i18n="why5_p">We stay involved after launch &mdash; support, iteration, and growth.</span></p></li>
         </ol>
       </div>
       <div class="listcol">
-        <h3>Our values</h3>
+        <h3 data-i18n="values_col_h">Our values</h3>
         <ol>
-          <li><p><b>Trust</b>We build long-term relationships with our clients.</p></li>
-          <li><p><b>Quality</b>We deliver solutions we&rsquo;d stake our name on.</p></li>
-          <li><p><b>Innovation</b>We use technology to create real value.</p></li>
-          <li><p><b>Commitment</b>We keep our promises.</p></li>
-          <li><p><b>Partnership</b>Our client&rsquo;s success is part of our own.</p></li>
+          <li><p><b data-i18n="val1_b">Trust</b><span data-i18n="val1_p">We build long-term relationships with our clients.</span></p></li>
+          <li><p><b data-i18n="val2_b">Quality</b><span data-i18n="val2_p">We deliver solutions we&rsquo;d stake our name on.</span></p></li>
+          <li><p><b data-i18n="val3_b">Innovation</b><span data-i18n="val3_p">We use technology to create real value.</span></p></li>
+          <li><p><b data-i18n="val4_b">Commitment</b><span data-i18n="val4_p">We keep our promises.</span></p></li>
+          <li><p><b data-i18n="val5_b">Partnership</b><span data-i18n="val5_p">Our client&rsquo;s success is part of our own.</span></p></li>
         </ol>
       </div>
     </div>
@@ -552,37 +567,37 @@
     <div class="trust-badge">
       <span class="ring">O</span>
       <div>
-        <b>Authorized Partner &mdash; Optimus Solutions</b>
-        <span>Designated partner, Kingdom of Saudi Arabia &middot; certified through Dec 2027</span>
+        <b data-i18n="trust_badge_b">Authorized Partner &mdash; Optimus Solutions</b>
+        <span data-i18n="trust_badge_span">Designated partner, Kingdom of Saudi Arabia &middot; certified through Dec 2027</span>
       </div>
     </div>
-    <p class="trust-note">Certificate issued by Optimus Solutions Teknoloji &Uuml;retim Sanayi Ticaret A.&Scedil;., &Iuml;stanbul</p>
+    <p class="trust-note" data-i18n="trust_note">Certificate issued by Optimus Solutions Teknoloji &Uuml;retim Sanayi Ticaret A.&Scedil;., &Iuml;stanbul</p>
   </div>
 </div>
 
 <!-- contact -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <p class="eyebrow">Get in touch</p>
-    <h2 style="margin-top:12px;">Let&rsquo;s build what&rsquo;s next for your business.</h2>
+    <p class="eyebrow" data-i18n="contact_eyebrow">Get in touch</p>
+    <h2 style="margin-top:12px;" data-i18n="contact_h2">Let&rsquo;s build what&rsquo;s next for your business.</h2>
     <div class="rule center"></div>
-    <p class="lede">Our team is ready to talk through your project and put the right division &mdash; or all three &mdash; to work for you.</p>
+    <p class="lede" data-i18n="contact_p">Our team is ready to talk through your project and put the right division &mdash; or all three &mdash; to work for you.</p>
     <div class="contact-actions">
       <a class="whatsapp" href="https://wa.me/966508269914" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.27 4.9L2 22l5.32-1.35a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.25.7-1.24 1.3-1.9 1.42-.5.09-1.16.16-3.36-.72-2.82-1.16-4.64-4.03-4.78-4.22-.14-.19-1.14-1.52-1.14-2.9 0-1.37.72-2.05.98-2.33.25-.28.55-.35.73-.35.19 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.84 2.06.91 2.22.07.15.12.34.02.53-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.28.7 1.16 1.51 1.89 1.04.94 1.91 1.24 2.19 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.18 1.38z"/></svg>
-        <span><small>WhatsApp</small>+966 50 826 9914</span>
+        <span><small data-i18n="whatsapp_label">WhatsApp</small><bdi>+966 50 826 9914</bdi></span>
       </a>
       <a class="whatsapp" href="https://wa.me/966583551154" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.27 4.9L2 22l5.32-1.35a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.25.7-1.24 1.3-1.9 1.42-.5.09-1.16.16-3.36-.72-2.82-1.16-4.64-4.03-4.78-4.22-.14-.19-1.14-1.52-1.14-2.9 0-1.37.72-2.05.98-2.33.25-.28.55-.35.73-.35.19 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.84 2.06.91 2.22.07.15.12.34.02.53-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.28.7 1.16 1.51 1.89 1.04.94 1.91 1.24 2.19 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.18 1.38z"/></svg>
-        <span><small>WhatsApp</small>+966 58 355 1154</span>
+        <span><small data-i18n="whatsapp_label">WhatsApp</small><bdi>+966 58 355 1154</bdi></span>
       </a>
       <a class="whatsapp" href="https://wa.me/966543085598" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.27 4.9L2 22l5.32-1.35a9.9 9.9 0 0 0 4.72 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.25.7-1.24 1.3-1.9 1.42-.5.09-1.16.16-3.36-.72-2.82-1.16-4.64-4.03-4.78-4.22-.14-.19-1.14-1.52-1.14-2.9 0-1.37.72-2.05.98-2.33.25-.28.55-.35.73-.35.19 0 .37 0 .53.01.17.01.4-.06.62.48.25.6.84 2.06.91 2.22.07.15.12.34.02.53-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.28-.12.55.16.28.7 1.16 1.51 1.89 1.04.94 1.91 1.24 2.19 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.18 1.38z"/></svg>
-        <span><small>WhatsApp</small>+966 54 308 5598</span>
+        <span><small data-i18n="whatsapp_label">WhatsApp</small><bdi>+966 54 308 5598</bdi></span>
       </a>
       <a class="whatsapp plain" href="mailto:V_Group_SA@outlook.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.4"/><path d="m4.5 6.5 7.5 6.2 7.5-6.2"/></svg>
-        <span><small>Email</small>V_Group_SA@outlook.com</span>
+        <span><small data-i18n="email_label">Email</small><bdi>V_Group_SA@outlook.com</bdi></span>
       </a>
     </div>
   </div>
@@ -594,21 +609,22 @@
     <div>
       <div class="foot-brand">
         <img class="mark" src="assets/images/logo_icon.png" alt="V Group logo">
-        <span class="brand-word" style="font-size:1.1rem;">V Group</span>
+        <span class="brand-word" style="font-size:1.1rem;" data-i18n="brand_word">V Group</span>
       </div>
-      <p class="foot-legal">Double V C &middot; Kingdom of Saudi Arabia<br>Registered trade name of V Group, founded 2026.</p>
+      <p class="foot-legal" data-i18n="foot_legal">Double V C &middot; Kingdom of Saudi Arabia<br>Registered trade name of V Group, founded 2026.</p>
     </div>
     <div class="foot-divs">
-      <div><b>Divisions</b>V Technology<br>V Smart Homes<br>V Office Solutions</div>
-      <div><b>Contact</b>+966 50 826 9914<br>+966 58 355 1154<br>+966 54 308 5598<br>V_Group_SA@outlook.com</div>
+      <div><b data-i18n="foot_divs_title">Divisions</b><span data-i18n="foot_divs_list">V Technology<br>V Smart Homes<br>V Office Solutions</span></div>
+      <div><b data-i18n="foot_contact_title">Contact</b><bdi>+966 50 826 9914</bdi><br><bdi>+966 58 355 1154</bdi><br><bdi>+966 54 308 5598</bdi><br><bdi>V_Group_SA@outlook.com</bdi></div>
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span>&copy; 2026 V Group. All rights reserved.</span>
-    <span>Today&rsquo;s Solutions &hellip; Tomorrow&rsquo;s Success</span>
+    <span data-i18n="foot_bottom_copy">&copy; 2026 V Group. All rights reserved.</span>
+    <span data-i18n="foot_bottom_tag">Today&rsquo;s Solutions &hellip; Tomorrow&rsquo;s Success</span>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 <script>
   (function(){
     var toggle = document.getElementById('navToggle');

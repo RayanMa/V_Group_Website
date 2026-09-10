@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>V Group Gallery</title>
 <link rel="icon" type="image/png" href="assets/images/logo_icon.png">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&family=Cairo:wght@600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
 
   :root{
     --paper:#F7F2E6;
@@ -44,6 +44,19 @@
   }
   p{margin:0;}
   a{color:inherit;text-decoration:none;}
+
+  html[dir="rtl"] body{font-family:'Tajawal','Manrope',system-ui,sans-serif;}
+  html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3{font-family:'Cairo','Cormorant',serif;}
+  html[dir="rtl"] .brand-word{font-family:'Cairo','Cormorant',serif;}
+
+  /* ---------- language toggle ---------- */
+  .lang-toggle{
+    background:none;border:1px solid var(--line);color:var(--ink-soft);
+    font-family:'Manrope',sans-serif;font-weight:700;font-size:0.78rem;
+    padding:7px 14px;cursor:pointer;letter-spacing:0.01em;
+  }
+  .lang-toggle:hover{border-color:var(--gold-deep);color:var(--gold-deep);}
+  html[dir="rtl"] .lang-toggle{font-family:'Tajawal','Manrope',sans-serif;}
 
   .wrap{
     max-width:1140px;
@@ -167,14 +180,14 @@
     width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;
   }
   .lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover{border-color:var(--gold-on-navy);color:var(--gold-on-navy);}
-  .lightbox-close{top:24px;right:24px;}
-  .lightbox-prev{left:24px;top:50%;transform:translateY(-50%);}
-  .lightbox-next{right:24px;top:50%;transform:translateY(-50%);}
+  .lightbox-close{top:24px;inset-inline-end:24px;}
+  .lightbox-prev{left:24px;top:50%;transform:translateY(-50%);direction:ltr;}
+  .lightbox-next{right:24px;top:50%;transform:translateY(-50%);direction:ltr;}
   @media (max-width:640px){
     .lightbox-prev,.lightbox-next{width:36px;height:36px;}
     .lightbox-prev{left:8px;}
     .lightbox-next{right:8px;}
-    .lightbox-close{top:12px;right:12px;}
+    .lightbox-close{top:12px;inset-inline-end:12px;}
   }
 
   /* ---------- footer ---------- */
@@ -200,40 +213,41 @@
   <div class="wrap nav-inner">
     <a class="brand" href="index.html">
       <img class="mark" src="assets/images/logo_icon.png" alt="V Group logo">
-      <span class="brand-word">V Group</span>
+      <span class="brand-word" data-i18n="brand_word">V Group</span>
     </a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="#catalog">Catalogue</a>
-      <a href="#gallery">Gallery</a>
-      <a class="nav-cta" href="index.html#contact">Talk to us</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="#catalog" data-i18n="nav_catalog">Catalogue</a>
+      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+      <a class="nav-cta" href="index.html#contact" data-i18n="nav_cta">Talk to us</a>
+      <button class="lang-toggle" type="button">العربية</button>
     </div>
   </div>
 </nav>
 
 <!-- header -->
 <header class="pagehead wrap">
-  <p class="eyebrow">Gallery &amp; catalogue</p>
-  <h1 style="margin-top:12px;">A closer look at what we build and equip.</h1>
+  <p class="eyebrow" data-i18n="pagehead_eyebrow">Gallery &amp; catalogue</p>
+  <h1 style="margin-top:12px;" data-i18n="pagehead_h1">A closer look at what we build and equip.</h1>
   <div class="rule"></div>
-  <p class="lede">Screenshots from the platforms we&rsquo;ve shipped, photos from office fit-outs we&rsquo;ve delivered, and our complete services catalogue &mdash; open to browse below.</p>
+  <p class="lede" data-i18n="pagehead_lede">Screenshots from the platforms we&rsquo;ve shipped, photos from office fit-outs we&rsquo;ve delivered, and our complete services catalogue &mdash; open to browse below.</p>
 </header>
 
 <!-- catalog -->
 <section class="section-divider" id="catalog">
   <div class="wrap">
     <div class="catalog-intro">
-      <h2>V Group Catalogue</h2>
-      <p>Our full services catalogue &mdash; every division, flagship product and case study, page by page. Use the arrows or click a thumbnail to jump; click the page to view it full-screen.</p>
+      <h2 data-i18n="catalog_h2">V Group Catalogue</h2>
+      <p data-i18n="catalog_p">Our full services catalogue &mdash; every division, flagship product and case study, page by page. Use the arrows or click a thumbnail to jump; click the page to view it full-screen.</p>
     </div>
     <div class="catalog-viewer">
       <div class="catalog-stage">
         <img id="catalogStageImg" src="assets/images/catalog_page_1.jpg" alt="V Group catalogue, page 1">
       </div>
       <div class="catalog-nav">
-        <button class="catalog-nav-btn" id="catalogPrev" type="button">&#8249; Previous</button>
+        <button class="catalog-nav-btn" id="catalogPrev" type="button"><bdi dir="ltr">&#8249;</bdi> <span data-i18n="catalog_prev_word">Previous</span></button>
         <span class="catalog-page-label" id="catalogPageLabel">Page 1 of 7</span>
-        <button class="catalog-nav-btn" id="catalogNext" type="button">Next &#8250;</button>
+        <button class="catalog-nav-btn" id="catalogNext" type="button"><span data-i18n="catalog_next_word">Next</span> <bdi dir="ltr">&#8250;</bdi></button>
       </div>
       <div class="catalog-thumbs" id="catalogThumbs">
         <img data-i="0" class="active" src="assets/images/catalog_page_1.jpg" alt="Page 1">
@@ -252,59 +266,59 @@
 <section class="section-divider" id="gallery">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Gallery</p>
-      <h2>From our project catalogue.</h2>
+      <p class="eyebrow" data-i18n="gallery_eyebrow">Gallery</p>
+      <h2 data-i18n="gallery_h2">From our project catalogue.</h2>
       <div class="rule"></div>
     </div>
 
     <div class="gallery-group">
-      <h3>Web &amp; Software</h3>
+      <h3 data-i18n="group_software_h3">Web &amp; Software</h3>
       <div class="gallery-grid" data-group="software">
-        <figure class="gallery-item" data-full="assets/images/jusoor_hero.jpg" data-cap="Jusoor &mdash; homepage">
-          <img src="assets/images/jusoor_hero.jpg" alt="Jusoor marketplace homepage" loading="lazy">
-          <figcaption>Jusoor &mdash; homepage</figcaption>
+        <figure class="gallery-item" data-full="assets/images/jusoor_hero.jpg" data-cap="Jusoor &mdash; homepage" data-i18n-attr="data-cap:cap_jusoor_hero">
+          <img src="assets/images/jusoor_hero.jpg" alt="Jusoor marketplace homepage" loading="lazy" data-i18n-attr="alt:alt_jusoor_hero">
+          <figcaption data-i18n="cap_jusoor_hero">Jusoor &mdash; homepage</figcaption>
         </figure>
-        <figure class="gallery-item" data-full="assets/images/jusoor_browse.jpg" data-cap="Jusoor &mdash; browse businesses">
-          <img src="assets/images/jusoor_browse.jpg" alt="Jusoor browse businesses screen" loading="lazy">
-          <figcaption>Jusoor &mdash; browse businesses</figcaption>
+        <figure class="gallery-item" data-full="assets/images/jusoor_browse.jpg" data-cap="Jusoor &mdash; browse businesses" data-i18n-attr="data-cap:cap_jusoor_browse">
+          <img src="assets/images/jusoor_browse.jpg" alt="Jusoor browse businesses screen" loading="lazy" data-i18n-attr="alt:alt_jusoor_browse">
+          <figcaption data-i18n="cap_jusoor_browse">Jusoor &mdash; browse businesses</figcaption>
         </figure>
-        <figure class="gallery-item" data-full="assets/images/jusoor_signin.jpg" data-cap="Jusoor &mdash; sign in">
-          <img src="assets/images/jusoor_signin.jpg" alt="Jusoor sign-in screen" loading="lazy">
-          <figcaption>Jusoor &mdash; sign in</figcaption>
+        <figure class="gallery-item" data-full="assets/images/jusoor_signin.jpg" data-cap="Jusoor &mdash; sign in" data-i18n-attr="data-cap:cap_jusoor_signin">
+          <img src="assets/images/jusoor_signin.jpg" alt="Jusoor sign-in screen" loading="lazy" data-i18n-attr="alt:alt_jusoor_signin">
+          <figcaption data-i18n="cap_jusoor_signin">Jusoor &mdash; sign in</figcaption>
         </figure>
-        <figure class="gallery-item" data-full="assets/images/ainhr_dashboard.jpg" data-cap="AinHR &mdash; executive dashboard">
-          <img src="assets/images/ainhr_dashboard.jpg" alt="AinHR executive dashboard" loading="lazy">
-          <figcaption>AinHR &mdash; executive dashboard</figcaption>
+        <figure class="gallery-item" data-full="assets/images/ainhr_dashboard.jpg" data-cap="AinHR &mdash; executive dashboard" data-i18n-attr="data-cap:cap_ainhr_dashboard">
+          <img src="assets/images/ainhr_dashboard.jpg" alt="AinHR executive dashboard" loading="lazy" data-i18n-attr="alt:alt_ainhr_dashboard">
+          <figcaption data-i18n="cap_ainhr_dashboard">AinHR &mdash; executive dashboard</figcaption>
         </figure>
-        <figure class="gallery-item" data-full="assets/images/ainhr_attendance.jpg" data-cap="AinHR &mdash; attendance by location">
-          <img src="assets/images/ainhr_attendance.jpg" alt="AinHR attendance-by-location report" loading="lazy">
-          <figcaption>AinHR &mdash; attendance by location</figcaption>
+        <figure class="gallery-item" data-full="assets/images/ainhr_attendance.jpg" data-cap="AinHR &mdash; attendance by location" data-i18n-attr="data-cap:cap_ainhr_attendance">
+          <img src="assets/images/ainhr_attendance.jpg" alt="AinHR attendance-by-location report" loading="lazy" data-i18n-attr="alt:alt_ainhr_attendance">
+          <figcaption data-i18n="cap_ainhr_attendance">AinHR &mdash; attendance by location</figcaption>
         </figure>
-        <figure class="gallery-item" data-full="assets/images/crm_pipeline.jpg" data-cap="Custom CRM &mdash; operations dashboard">
-          <img src="assets/images/crm_pipeline.jpg" alt="Custom CRM operations dashboard" loading="lazy">
-          <figcaption>Custom CRM &mdash; operations dashboard</figcaption>
+        <figure class="gallery-item" data-full="assets/images/crm_pipeline.jpg" data-cap="Custom CRM &mdash; operations dashboard" data-i18n-attr="data-cap:cap_crm_pipeline">
+          <img src="assets/images/crm_pipeline.jpg" alt="Custom CRM operations dashboard" loading="lazy" data-i18n-attr="alt:alt_crm_pipeline">
+          <figcaption data-i18n="cap_crm_pipeline">Custom CRM &mdash; operations dashboard</figcaption>
         </figure>
-        <figure class="gallery-item" data-full="assets/images/tenders_redacted.jpg" data-cap="Tender-tracking portal">
-          <img src="assets/images/tenders_redacted.jpg" alt="Tender-tracking portal, client data blurred for privacy" loading="lazy">
-          <figcaption>Tender-tracking portal</figcaption>
+        <figure class="gallery-item" data-full="assets/images/tenders_redacted.jpg" data-cap="Tender-tracking portal" data-i18n-attr="data-cap:cap_tenders">
+          <img src="assets/images/tenders_redacted.jpg" alt="Tender-tracking portal, client data blurred for privacy" loading="lazy" data-i18n-attr="alt:alt_tenders">
+          <figcaption data-i18n="cap_tenders">Tender-tracking portal</figcaption>
         </figure>
       </div>
     </div>
 
     <div class="gallery-group">
-      <h3>Office &amp; Equipment</h3>
+      <h3 data-i18n="group_office_h3">Office &amp; Equipment</h3>
       <div class="gallery-grid" data-group="office">
-        <figure class="gallery-item" data-full="assets/images/office_desks.jpg" data-cap="Office fit-out">
-          <img src="assets/images/office_desks.jpg" alt="Office desks fitted out with equipment" loading="lazy">
-          <figcaption>Office fit-out</figcaption>
+        <figure class="gallery-item" data-full="assets/images/office_desks.jpg" data-cap="Office fit-out" data-i18n-attr="data-cap:cap_office_desks">
+          <img src="assets/images/office_desks.jpg" alt="Office desks fitted out with equipment" loading="lazy" data-i18n-attr="alt:alt_office_desks">
+          <figcaption data-i18n="cap_office_desks">Office fit-out</figcaption>
         </figure>
-        <figure class="gallery-item" data-full="assets/images/office_floor.jpg" data-cap="Workspace setup">
-          <img src="assets/images/office_floor.jpg" alt="Open-plan office floor" loading="lazy">
-          <figcaption>Workspace setup</figcaption>
+        <figure class="gallery-item" data-full="assets/images/office_floor.jpg" data-cap="Workspace setup" data-i18n-attr="data-cap:cap_office_floor">
+          <img src="assets/images/office_floor.jpg" alt="Open-plan office floor" loading="lazy" data-i18n-attr="alt:alt_office_floor">
+          <figcaption data-i18n="cap_office_floor">Workspace setup</figcaption>
         </figure>
-        <figure class="gallery-item" data-full="assets/images/pc_hardware.jpg" data-cap="Computers &amp; technical equipment">
-          <img src="assets/images/pc_hardware.jpg" alt="Computer hardware and internal components" loading="lazy">
-          <figcaption>Computers &amp; technical equipment</figcaption>
+        <figure class="gallery-item" data-full="assets/images/pc_hardware.jpg" data-cap="Computers &amp; technical equipment" data-i18n-attr="data-cap:cap_pc_hardware">
+          <img src="assets/images/pc_hardware.jpg" alt="Computer hardware and internal components" loading="lazy" data-i18n-attr="alt:alt_pc_hardware">
+          <figcaption data-i18n="cap_pc_hardware">Computers &amp; technical equipment</figcaption>
         </figure>
       </div>
     </div>
@@ -313,11 +327,11 @@
 
 <!-- lightbox -->
 <div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">&times;</button>
-  <button class="lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous">&#8249;</button>
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close" data-i18n-attr="aria-label:lightbox_close_label">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous" data-i18n-attr="aria-label:lightbox_prev_label">&#8249;</button>
   <img id="lightboxImg" src="" alt="">
   <p class="lightbox-cap" id="lightboxCap"></p>
-  <button class="lightbox-next" id="lightboxNext" type="button" aria-label="Next">&#8250;</button>
+  <button class="lightbox-next" id="lightboxNext" type="button" aria-label="Next" data-i18n-attr="aria-label:lightbox_next_label">&#8250;</button>
 </div>
 
 <!-- footer -->
@@ -326,23 +340,32 @@
     <div>
       <div class="foot-brand">
         <img class="mark" src="assets/images/logo_icon.png" alt="V Group logo">
-        <span class="brand-word" style="font-size:1.1rem;">V Group</span>
+        <span class="brand-word" style="font-size:1.1rem;" data-i18n="brand_word">V Group</span>
       </div>
-      <p class="foot-legal">Double V C &middot; Kingdom of Saudi Arabia<br>Registered trade name of V Group, founded 2026.</p>
+      <p class="foot-legal" data-i18n="foot_legal">Double V C &middot; Kingdom of Saudi Arabia<br>Registered trade name of V Group, founded 2026.</p>
     </div>
     <div class="foot-divs">
-      <div><b>Divisions</b>V Technology<br>V Smart Homes<br>V Office Solutions</div>
-      <div><b>Contact</b>+966 50 826 9914<br>+966 58 355 1154<br>+966 54 308 5598<br>V_Group_SA@outlook.com</div>
+      <div><b data-i18n="foot_divs_title">Divisions</b><span data-i18n="foot_divs_list">V Technology<br>V Smart Homes<br>V Office Solutions</span></div>
+      <div><b data-i18n="foot_contact_title">Contact</b><bdi>+966 50 826 9914</bdi><br><bdi>+966 58 355 1154</bdi><br><bdi>+966 54 308 5598</bdi><br><bdi>V_Group_SA@outlook.com</bdi></div>
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span>&copy; 2026 V Group. All rights reserved.</span>
-    <a href="index.html">&larr; Back to home</a>
+    <span data-i18n="foot_bottom_copy">&copy; 2026 V Group. All rights reserved.</span>
+    <a href="index.html" data-i18n="foot_back_home">&larr; Back to home</a>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 <script>
   (function(){
+    function t(key, vars){
+      var s = (window.VGroupI18n ? window.VGroupI18n.t(key) : key) || key;
+      if(vars){
+        Object.keys(vars).forEach(function(k){ s = s.replace('{' + k + '}', vars[k]); });
+      }
+      return s;
+    }
+
     var catalogPages = [
       "assets/images/catalog_page_1.jpg", "assets/images/catalog_page_2.jpg", "assets/images/catalog_page_3.jpg",
       "assets/images/catalog_page_4.jpg", "assets/images/catalog_page_5.jpg", "assets/images/catalog_page_6.jpg",
@@ -358,46 +381,50 @@
     function renderPage(){
       stageImg.src = catalogPages[pageIndex];
       stageImg.alt = "V Group catalogue, page " + (pageIndex + 1);
-      pageLabel.textContent = "Page " + (pageIndex + 1) + " of " + catalogPages.length;
+      pageLabel.textContent = t('catalog_page_label', { n: pageIndex + 1, total: catalogPages.length });
       prevBtn.disabled = pageIndex === 0;
       nextBtn.disabled = pageIndex === catalogPages.length - 1;
-      thumbs.forEach(function(t, i){ t.classList.toggle('active', i === pageIndex); });
+      thumbs.forEach(function(thumb, i){ thumb.classList.toggle('active', i === pageIndex); });
     }
     prevBtn.addEventListener('click', function(){ if(pageIndex > 0){ pageIndex--; renderPage(); } });
     nextBtn.addEventListener('click', function(){ if(pageIndex < catalogPages.length - 1){ pageIndex++; renderPage(); } });
-    thumbs.forEach(function(t){
-      t.addEventListener('click', function(){ pageIndex = parseInt(t.getAttribute('data-i'), 10); renderPage(); });
+    thumbs.forEach(function(thumb){
+      thumb.addEventListener('click', function(){ pageIndex = parseInt(thumb.getAttribute('data-i'), 10); renderPage(); });
     });
+
     var galleryItems = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
-    var gallerySet = galleryItems.map(function(el){
-      return { src: el.getAttribute('data-full'), cap: el.getAttribute('data-cap') || '' };
-    });
-    var catalogSet = catalogPages.map(function(src, i){
-      return { src: src, cap: 'Catalogue — page ' + (i + 1) + ' of ' + catalogPages.length };
-    });
 
     var lightbox = document.getElementById('lightbox');
     var lbImg = document.getElementById('lightboxImg');
     var lbCap = document.getElementById('lightboxCap');
-    var activeSet = [];
+    var activeMode = null; // 'gallery' | 'catalog'
     var current = -1;
 
+    function itemAt(mode, i){
+      if(mode === 'gallery'){
+        var el = galleryItems[i];
+        return { src: el.getAttribute('data-full'), cap: el.getAttribute('data-cap') || '' };
+      }
+      return { src: catalogPages[i], cap: t('catalog_caption', { n: i + 1, total: catalogPages.length }) };
+    }
+    function activeLength(){
+      return activeMode === 'gallery' ? galleryItems.length : catalogPages.length;
+    }
     function show(i){
-      if(i < 0) i = activeSet.length - 1;
-      if(i >= activeSet.length) i = 0;
+      var len = activeLength();
+      if(i < 0) i = len - 1;
+      if(i >= len) i = 0;
       current = i;
-      var item = activeSet[i];
+      var item = itemAt(activeMode, i);
       lbImg.src = item.src;
       lbCap.textContent = item.cap;
       lightbox.classList.add('open');
     }
-    function open(set, i){ activeSet = set; show(i); }
-    function close(){ lightbox.classList.remove('open'); lbImg.src=''; }
-
-    function showCatalogFull(i){ open(catalogSet, i); }
+    function open(mode, i){ activeMode = mode; show(i); }
+    function close(){ lightbox.classList.remove('open'); lbImg.src=''; activeMode = null; }
 
     galleryItems.forEach(function(el, i){
-      el.addEventListener('click', function(){ open(gallerySet, i); });
+      el.addEventListener('click', function(){ open('gallery', i); });
     });
     document.getElementById('lightboxClose').addEventListener('click', close);
     document.getElementById('lightboxPrev').addEventListener('click', function(){ show(current-1); });
@@ -409,6 +436,15 @@
       if(e.key === 'ArrowLeft') show(current-1);
       if(e.key === 'ArrowRight') show(current+1);
     });
+
+    if(window.VGroupI18n){
+      window.VGroupI18n.onChange(function(){
+        renderPage();
+        if(lightbox.classList.contains('open') && activeMode !== null && current >= 0){
+          show(current);
+        }
+      });
+    }
   })();
 </script>
 
