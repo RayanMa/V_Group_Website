@@ -23,7 +23,7 @@
 
       who_eyebrow: "Who we are",
       who_h2: "A business group built around one belief.",
-      who_p1: "Every company’s success starts with a strong foundation. V Group was founded in 2026 to help organisations accelerate their digital transformation — through technology consulting, automation and intelligent systems that lift operational efficiency and productivity.",
+      who_p1: "Every company’s success starts with a strong foundation. V Group was founded to help organisations accelerate their digital transformation — through technology consulting, automation and intelligent systems that lift operational efficiency and productivity.",
       who_p2: "We combine practical solutions with quality, innovation and a genuine understanding of what each client needs, so we can be a trusted partner throughout the growth journey — not just a vendor for a single project.",
       pillar1_h: "Vision",
       pillar1_p: "To be among the most prominent business groups delivering integrated solutions that support institutional growth — building businesses that are more efficient, intelligent and sustainable.",
@@ -33,8 +33,8 @@
       pillar3_p: "Strengthening our position in the technology sector through innovative solutions, expansion into target markets, strategic partnerships, and digital products that support sustainable growth.",
 
       services_eyebrow: "What we do",
-      services_h2: "Three divisions. Three clear services.",
-      services_note: "Rather than assembling separate vendors, partners work with one group that understands the whole picture — the systems, the spaces, and the office they run in.",
+      services_h2: "Divisions",
+      services_note: "Rather than assembling separate vendors, partners work with one group that understands the whole picture — the systems and the spaces.",
 
       div1_num: "01 — V Technology",
       div1_h3: "Websites, ERP &amp; CRM",
@@ -56,16 +56,6 @@
       div2_li4: "Configuration &amp; handover",
       div2_li5: "After-installation support",
 
-      div3_num: "03 — V Office Solutions",
-      div3_h3: "Smart Meeting Rooms &amp; Office",
-      div3_tag: "Everything a workplace needs to run",
-      div3_desc: "From smart, fully-equipped meeting rooms to the everyday equipment an office depends on — sourced, installed and supported.",
-      div3_li1: "Smart meeting rooms",
-      div3_li2: "Computers &amp; technical equipment",
-      div3_li3: "Office fit-out &amp; supplies",
-      div3_li4: "Printing &amp; communications",
-      div3_li5: "Installation &amp; technical support",
-
       work_eyebrow: "Selected work",
       work_h2: "Products our partners run on today.",
       work_flag1: "Flagship platform",
@@ -80,14 +70,14 @@
 
       teaser_eyebrow: "Gallery &amp; catalogue",
       teaser_h2: "See the work up close, and browse our full catalogue.",
-      teaser_p: "Screenshots from Jusoor, AinHR and our custom CRM, photos from office fit-outs we’ve delivered, and our complete services catalogue as a viewable PDF.",
+      teaser_p: "Screenshots from Jusoor, AinHR and our custom CRM, plus our complete services catalogue as a viewable PDF.",
       teaser_btn: "Open Gallery &amp; Catalogue",
 
       why_eyebrow: "Why V Group",
       why_h2: "What we bring to the table.",
       why_col_h: "Why partners choose us",
       why1_b: "Integrated solutions, one place",
-      why1_p: "Technology, smart environments and office readiness — coordinated, not outsourced piecemeal.",
+      why1_p: "Technology and smart environments — coordinated, not outsourced piecemeal.",
       why2_b: "We understand needs from the inside",
       why2_p: "Our team has run these operations, not just built systems for them.",
       why3_b: "Technology paired with operational expertise",
@@ -115,13 +105,15 @@
 
       contact_eyebrow: "Get in touch",
       contact_h2: "Let’s build what’s next for your business.",
-      contact_p: "Our team is ready to talk through your project and put the right division — or all three — to work for you.",
+      contact_p: "Our team is ready to talk through your project and put the right division — or both — to work for you.",
       whatsapp_label: "WhatsApp",
+      whatsapp_tag_tech: "V Technology",
+      whatsapp_tag_smart: "V Smart Home",
       email_label: "Email",
 
-      foot_legal: "Double V C · Kingdom of Saudi Arabia<br>Registered trade name of V Group, founded 2026.",
+      foot_legal: "Double V C · Kingdom of Saudi Arabia<br>Registered trade name of V Group.",
       foot_divs_title: "Divisions",
-      foot_divs_list: "V Technology<br>V Smart Homes<br>V Office Solutions",
+      foot_divs_list: "V Technology<br>V Smart Homes",
       foot_contact_title: "Contact",
       foot_bottom_copy: "© 2026 V Group. All rights reserved.",
       foot_bottom_tag: "Today’s Solutions … Tomorrow’s Success",
@@ -129,7 +121,15 @@
 
       pagehead_eyebrow: "Gallery &amp; catalogue",
       pagehead_h1: "A closer look at what we build and equip.",
-      pagehead_lede: "Screenshots from the platforms we’ve shipped, photos from office fit-outs we’ve delivered, and our complete services catalogue — open to browse below.",
+      pagehead_lede: "Screenshots from the platforms we’ve shipped, and our complete services catalogue — open to browse below.",
+
+      nav_section_tech: "V Technology",
+      nav_section_smart: "V Smart Homes",
+
+      section_tech_eyebrow: "V Technology",
+      section_tech_h2: "Websites, ERP &amp; CRM &mdash; in practice.",
+      section_smart_eyebrow: "V Smart Homes",
+      section_smart_h2: "Smart home devices &amp; installations.",
 
       catalog_h2: "V Group Catalogue",
       catalog_p: "Our full services catalogue — every division, flagship product and case study, page by page. Use the arrows or click a thumbnail to jump; click the page to view it full-screen.",
@@ -141,7 +141,8 @@
       gallery_eyebrow: "Gallery",
       gallery_h2: "From our project catalogue.",
       group_software_h3: "Web &amp; Software",
-      group_office_h3: "Office &amp; Equipment",
+      group_smart_h3: "Smart Homes",
+      placeholder_note: "Placeholder photos — to be replaced with V Smart Homes project photography.",
 
       cap_jusoor_hero: "Jusoor — homepage",
       cap_jusoor_browse: "Jusoor — browse businesses",
@@ -150,9 +151,9 @@
       cap_ainhr_attendance: "AinHR — attendance by location",
       cap_crm_pipeline: "Custom CRM — operations dashboard",
       cap_tenders: "Tender-tracking portal",
-      cap_office_desks: "Office fit-out",
-      cap_office_floor: "Workspace setup",
       cap_pc_hardware: "Computers &amp; technical equipment",
+      cap_smart_placeholder_1: "Placeholder photo (smart home photography coming soon)",
+      cap_smart_placeholder_2: "Placeholder photo (smart home photography coming soon)",
 
       alt_jusoor_hero: "Jusoor marketplace homepage",
       alt_jusoor_browse: "Jusoor browse businesses screen",
@@ -161,9 +162,9 @@
       alt_ainhr_attendance: "AinHR attendance-by-location report",
       alt_crm_pipeline: "Custom CRM operations dashboard",
       alt_tenders: "Tender-tracking portal, client data blurred for privacy",
-      alt_office_desks: "Office desks fitted out with equipment",
-      alt_office_floor: "Open-plan office floor",
       alt_pc_hardware: "Computer hardware and internal components",
+      alt_smart_placeholder_1: "Placeholder image, to be replaced with smart home project photography",
+      alt_smart_placeholder_2: "Placeholder image, to be replaced with smart home project photography",
 
       lightbox_close_label: "Close",
       lightbox_prev_label: "Previous",
@@ -188,7 +189,7 @@
 
       who_eyebrow: "من نحن",
       who_h2: "مجموعة أعمال تأسست على مبدأ واحد.",
-      who_p1: "تأسست المجموعة عام 2026 بهدف تمكين المؤسسات من تسريع رحلة التحول الرقمي من خلال تقديم الاستشارات التقنية، وتطوير حلول الأتمتة، وبناء الأنظمة الذكية التي تعزز الكفاءة التشغيلية وترفع الإنتاجية. كما تقدم المجموعة حلولاً متكاملة في مجال تقنية المعلومات تشمل توريد أجهزة الحاسب الآلي بمختلف المواصفات، وتجهيز المكاتب والبنية التحتية التقنية، وتوفير الحلول التي تلبي احتياجات الشركات بمختلف أحجامها.",
+      who_p1: "تأسست مجموعة ڤي بهدف تمكين المؤسسات من تسريع رحلة التحول الرقمي من خلال تقديم الاستشارات التقنية، وتطوير حلول الأتمتة، وبناء الأنظمة الذكية التي تعزز الكفاءة التشغيلية وترفع الإنتاجية. كما تقدم المجموعة حلولاً متكاملة في مجال تقنية المعلومات تشمل توريد أجهزة الحاسب الآلي بمختلف المواصفات، والبنية التحتية التقنية، وتوفير الحلول التي تلبي احتياجات الشركات بمختلف أحجامها.",
       who_p2: "مجموعة ڤي هي مجموعة أعمال متخصصة في تقديم حلول متكاملة تساعد الشركات على التأسيس والنمو والتطور، من خلال الجمع بين التقنية، وحلول الأعمال، وتجهيز بيئات العمل. نؤمن بأن نجاح الشركات يبدأ من بناء أساس قوي، لذلك نقدم حلولاً عملية تجمع بين الجودة والابتكار وفهم احتياجات العميل، لنكون شريكاً موثوقاً في رحلة النمو.",
       pillar1_h: "الرؤية",
       pillar1_p: "أن نكون من أبرز مجموعات الأعمال التي تقدم حلولاً متكاملة تدعم نمو المؤسسات، وتساهم في بناء أعمال أكثر كفاءة وذكاءً واستدامة.",
@@ -198,8 +199,8 @@
       pillar3_p: "تعزيز مكانة المجموعة في قطاع التقنية من خلال تقديم حلول مبتكرة ومتكاملة، والتوسع في الأسواق المستهدفة، وبناء شراكات استراتيجية، وتطوير منتجات وخدمات رقمية تدعم التحول الرقمي وتحقق نمواً مستداماً للمجموعة.",
 
       services_eyebrow: "ماذا نقدم",
-      services_h2: "ثلاثة قطاعات. ثلاث خدمات واضحة.",
-      services_note: "بدلاً من التعامل مع عدة موردين متفرقين، يعمل شركاؤنا مع مجموعة واحدة تفهم الصورة الكاملة — الأنظمة، والبيئات، والمكتب الذي يديرون أعمالهم من خلاله.",
+      services_h2: "القطاعات",
+      services_note: "بدلاً من التعامل مع عدة موردين متفرقين، يعمل شركاؤنا مع مجموعة واحدة تفهم الصورة الكاملة — الأنظمة والبيئات.",
 
       div1_num: "01 — ڤي للتقنية",
       div1_h3: "مواقع إلكترونية وأنظمة ERP وCRM",
@@ -221,16 +222,6 @@
       div2_li4: "الإعداد والتسليم",
       div2_li5: "الدعم بعد التركيب",
 
-      div3_num: "03 — ڤي لتجهيز الأعمال",
-      div3_h3: "قاعات اجتماعات ذكية وتجهيزات مكتبية",
-      div3_tag: "كل ما يحتاجه مكان العمل ليعمل بكفاءة",
-      div3_desc: "من قاعات الاجتماعات الذكية المجهزة بالكامل إلى المعدات اليومية التي يعتمد عليها المكتب — توريداً وتركيباً ودعماً.",
-      div3_li1: "قاعات اجتماعات ذكية",
-      div3_li2: "أجهزة حاسوب ومعدات تقنية",
-      div3_li3: "تجهيز المكاتب ولوازمها",
-      div3_li4: "حلول الطباعة والاتصالات",
-      div3_li5: "التركيب والدعم الفني",
-
       work_eyebrow: "أعمال مختارة",
       work_h2: "منتجات يعتمد عليها شركاؤنا اليوم.",
       work_flag1: "المنصة الرائدة",
@@ -245,14 +236,14 @@
 
       teaser_eyebrow: "المعرض والكتالوج",
       teaser_h2: "شاهد أعمالنا عن قرب، وتصفّح كتالوجنا الكامل.",
-      teaser_p: "لقطات من منصات جسور وAinHR ونظام CRM المخصص، وصور من مشاريع تجهيز المكاتب التي نفذّناها، إضافة إلى كتالوج خدماتنا الكامل بصيغة PDF قابلة للتصفّح.",
+      teaser_p: "لقطات من منصات جسور وAinHR ونظام CRM المخصص، إضافة إلى كتالوج خدماتنا الكامل بصيغة PDF قابلة للتصفّح.",
       teaser_btn: "افتح المعرض والكتالوج",
 
       why_eyebrow: "لماذا مجموعة ڤي",
       why_h2: "ما الذي نقدمه لشركائنا.",
       why_col_h: "لماذا يختارنا شركاؤنا",
       why1_b: "حلول متكاملة في مكان واحد",
-      why1_p: "التقنية، والبيئات الذكية، وتجهيز المكاتب — منسّقة معاً ضمن جهة واحدة، لا موزّعة على أطراف متعددة.",
+      why1_p: "التقنية والبيئات الذكية — منسّقة معاً ضمن جهة واحدة، لا موزّعة على أطراف متعددة.",
       why2_b: "نفهم احتياجات الشركات من الداخل",
       why2_p: "فريقنا خاض هذه العمليات بنفسه، ولم يكتفِ ببناء أنظمة لها من الخارج.",
       why3_b: "الجمع بين التقنية والخبرة التشغيلية",
@@ -280,13 +271,15 @@
 
       contact_eyebrow: "تواصل معنا",
       contact_h2: "لنبنِ معاً الخطوة القادمة لأعمالك.",
-      contact_p: "فريقنا جاهز لمناقشة مشروعك، وتكليف القطاع المناسب — أو القطاعات الثلاثة معاً — للعمل على تحقيق أهدافك.",
+      contact_p: "فريقنا جاهز لمناقشة مشروعك، وتكليف القطاع المناسب — أو القطاعين معاً — للعمل على تحقيق أهدافك.",
       whatsapp_label: "واتساب",
+      whatsapp_tag_tech: "ڤي للتقنية",
+      whatsapp_tag_smart: "ڤي للمنازل الذكية",
       email_label: "البريد الإلكتروني",
 
-      foot_legal: "Double V C · المملكة العربية السعودية<br>الاسم التجاري المسجل لمجموعة ڤي، تأسست عام 2026.",
+      foot_legal: "Double V C · المملكة العربية السعودية<br>الاسم التجاري المسجل لمجموعة ڤي.",
       foot_divs_title: "القطاعات",
-      foot_divs_list: "ڤي للتقنية<br>ڤي للمنازل الذكية<br>ڤي لتجهيز الأعمال",
+      foot_divs_list: "ڤي للتقنية<br>ڤي للمنازل الذكية",
       foot_contact_title: "التواصل",
       foot_bottom_copy: "© 2026 مجموعة ڤي. جميع الحقوق محفوظة.",
       foot_bottom_tag: "حلول اليوم... نجاح الغد",
@@ -294,7 +287,15 @@
 
       pagehead_eyebrow: "المعرض والكتالوج",
       pagehead_h1: "نظرة أقرب على ما نبنيه ونجهّزه.",
-      pagehead_lede: "لقطات من المنصات التي أطلقناها، وصور من مشاريع تجهيز المكاتب التي نفذّناها، وكتالوج خدماتنا الكامل — متاح للتصفّح أدناه.",
+      pagehead_lede: "لقطات من المنصات التي أطلقناها، وكتالوج خدماتنا الكامل — متاح للتصفّح أدناه.",
+
+      nav_section_tech: "ڤي للتقنية",
+      nav_section_smart: "ڤي للمنازل الذكية",
+
+      section_tech_eyebrow: "ڤي للتقنية",
+      section_tech_h2: "مواقع إلكترونية وأنظمة ERP وCRM &mdash; في الواقع.",
+      section_smart_eyebrow: "ڤي للمنازل الذكية",
+      section_smart_h2: "أجهزة المنازل الذكية وتركيباتها.",
 
       catalog_h2: "كتالوج مجموعة ڤي",
       catalog_p: "كتالوج خدماتنا الكامل — كل قطاع، ومنتج رئيسي، ودراسة حالة، صفحة بصفحة. استخدم الأسهم أو اضغط على إحدى الصور المصغرة للانتقال، واضغط على الصفحة لعرضها بملء الشاشة.",
@@ -306,7 +307,8 @@
       gallery_eyebrow: "المعرض",
       gallery_h2: "من كتالوج مشاريعنا.",
       group_software_h3: "الويب والبرمجيات",
-      group_office_h3: "المكاتب والتجهيزات",
+      group_smart_h3: "المنازل الذكية",
+      placeholder_note: "صور مؤقتة — سيتم استبدالها بصور مشاريع ڤي للمنازل الذكية.",
 
       cap_jusoor_hero: "جسور — الصفحة الرئيسية",
       cap_jusoor_browse: "جسور — تصفّح الأعمال التجارية",
@@ -315,9 +317,9 @@
       cap_ainhr_attendance: "AinHR — الحضور حسب الموقع",
       cap_crm_pipeline: "نظام CRM مخصص — لوحة العمليات",
       cap_tenders: "بوابة متابعة المناقصات",
-      cap_office_desks: "تجهيز المكاتب",
-      cap_office_floor: "إعداد بيئة العمل",
       cap_pc_hardware: "أجهزة حاسوب ومعدات تقنية",
+      cap_smart_placeholder_1: "صورة مؤقتة (صور المنازل الذكية قريباً)",
+      cap_smart_placeholder_2: "صورة مؤقتة (صور المنازل الذكية قريباً)",
 
       alt_jusoor_hero: "الصفحة الرئيسية لمنصة جسور",
       alt_jusoor_browse: "شاشة تصفّح الأعمال في جسور",
@@ -326,9 +328,9 @@
       alt_ainhr_attendance: "تقرير الحضور حسب الموقع في AinHR",
       alt_crm_pipeline: "لوحة عمليات نظام CRM المخصص",
       alt_tenders: "بوابة متابعة المناقصات، مع طمس بيانات العملاء حفاظاً على الخصوصية",
-      alt_office_desks: "مكاتب مجهزة بالمعدات اللازمة",
-      alt_office_floor: "طابق مكتبي مفتوح",
       alt_pc_hardware: "مكوّنات أجهزة الحاسوب الداخلية",
+      alt_smart_placeholder_1: "صورة مؤقتة، سيتم استبدالها بصور مشاريع المنازل الذكية",
+      alt_smart_placeholder_2: "صورة مؤقتة، سيتم استبدالها بصور مشاريع المنازل الذكية",
 
       lightbox_close_label: "إغلاق",
       lightbox_prev_label: "السابق",

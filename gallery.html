@@ -70,7 +70,7 @@
     font-size:0.76rem;font-weight:700;letter-spacing:0.16em;
     text-transform:uppercase;color:var(--gold-deep);
   }
-  .lede{font-size:1.05rem;line-height:1.68;color:var(--ink-soft);max-width:58ch;}
+  .lede{font-size:1.05rem;line-height:1.68;color:var(--ink-soft);max-width:58ch;text-align:justify;}
 
   .mark{width:26px;height:auto;flex:none;display:block;}
 
@@ -102,7 +102,7 @@
   /* ---------- catalog viewer ---------- */
   .catalog-intro{margin-bottom:22px;}
   .catalog-intro h2{font-size:1.5rem;}
-  .catalog-intro p{margin-top:8px;color:var(--ink-soft);font-size:0.94rem;max-width:56ch;}
+  .catalog-intro p{margin-top:8px;color:var(--ink-soft);font-size:0.94rem;max-width:56ch;text-align:justify;}
   .btn{
     display:inline-flex;align-items:center;gap:8px;padding:13px 24px;font-weight:700;
     font-size:0.9rem;letter-spacing:0.01em;border:1px solid transparent;background:none;
@@ -195,7 +195,7 @@
   .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
   .foot-brand{display:flex;align-items:center;gap:10px;color:var(--text-on-navy);}
   .foot-brand .mark{width:20px;height:auto;}
-  .foot-legal{font-size:0.82rem;line-height:1.6;max-width:38ch;margin-top:10px;}
+  .foot-legal{font-size:0.82rem;line-height:1.6;max-width:38ch;margin-top:10px;text-align:justify;}
   .foot-divs{display:flex;gap:28px;flex-wrap:wrap;font-size:0.84rem;}
   .foot-divs div b{display:block;color:var(--text-on-navy);font-weight:700;margin-bottom:6px;}
   .foot-bottom{
@@ -217,8 +217,8 @@
     </a>
     <div class="nav-links">
       <a href="index.html" data-i18n="nav_home">Home</a>
-      <a href="#catalog" data-i18n="nav_catalog">Catalogue</a>
-      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+      <a href="#tech" data-i18n="nav_section_tech">V Technology</a>
+      <a href="#smart" data-i18n="nav_section_smart">V Smart Homes</a>
       <a class="nav-cta" href="index.html#contact" data-i18n="nav_cta">Talk to us</a>
       <button class="lang-toggle" type="button">العربية</button>
     </div>
@@ -230,26 +230,32 @@
   <p class="eyebrow" data-i18n="pagehead_eyebrow">Gallery &amp; catalogue</p>
   <h1 style="margin-top:12px;" data-i18n="pagehead_h1">A closer look at what we build and equip.</h1>
   <div class="rule"></div>
-  <p class="lede" data-i18n="pagehead_lede">Screenshots from the platforms we&rsquo;ve shipped, photos from office fit-outs we&rsquo;ve delivered, and our complete services catalogue &mdash; open to browse below.</p>
+  <p class="lede" data-i18n="pagehead_lede">Screenshots from the platforms we&rsquo;ve shipped, and our complete services catalogue &mdash; open to browse below.</p>
 </header>
 
-<!-- catalog -->
-<section class="section-divider" id="catalog">
+<!-- V Technology -->
+<section class="section-divider" id="tech">
   <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="section_tech_eyebrow">V Technology</p>
+      <h2 data-i18n="section_tech_h2">Websites, ERP &amp; CRM &mdash; in practice.</h2>
+      <div class="rule"></div>
+    </div>
+
     <div class="catalog-intro">
       <h2 data-i18n="catalog_h2">V Group Catalogue</h2>
       <p data-i18n="catalog_p">Our full services catalogue &mdash; every division, flagship product and case study, page by page. Use the arrows or click a thumbnail to jump; click the page to view it full-screen.</p>
     </div>
-    <div class="catalog-viewer">
+    <div class="catalog-viewer" data-catalog="tech">
       <div class="catalog-stage">
-        <img id="catalogStageImg" src="assets/images/catalog_page_1.jpg" alt="V Group catalogue, page 1">
+        <img class="catalogStageImg" src="assets/images/catalog_page_1.jpg" alt="V Group catalogue, page 1">
       </div>
       <div class="catalog-nav">
-        <button class="catalog-nav-btn" id="catalogPrev" type="button"><bdi dir="ltr">&#8249;</bdi> <span data-i18n="catalog_prev_word">Previous</span></button>
-        <span class="catalog-page-label" id="catalogPageLabel">Page 1 of 7</span>
-        <button class="catalog-nav-btn" id="catalogNext" type="button"><span data-i18n="catalog_next_word">Next</span> <bdi dir="ltr">&#8250;</bdi></button>
+        <button class="catalog-nav-btn catalogPrev" type="button"><bdi dir="ltr">&#8249;</bdi> <span data-i18n="catalog_prev_word">Previous</span></button>
+        <span class="catalog-page-label catalogPageLabel">Page 1 of 7</span>
+        <button class="catalog-nav-btn catalogNext" type="button"><span data-i18n="catalog_next_word">Next</span> <bdi dir="ltr">&#8250;</bdi></button>
       </div>
-      <div class="catalog-thumbs" id="catalogThumbs">
+      <div class="catalog-thumbs catalogThumbs">
         <img data-i="0" class="active" src="assets/images/catalog_page_1.jpg" alt="Page 1">
         <img data-i="1" src="assets/images/catalog_page_2.jpg" alt="Page 2">
         <img data-i="2" src="assets/images/catalog_page_3.jpg" alt="Page 3">
@@ -259,21 +265,10 @@
         <img data-i="6" src="assets/images/catalog_page_7.jpg" alt="Page 7">
       </div>
     </div>
-  </div>
-</section>
 
-<!-- gallery -->
-<section class="section-divider" id="gallery">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow" data-i18n="gallery_eyebrow">Gallery</p>
-      <h2 data-i18n="gallery_h2">From our project catalogue.</h2>
-      <div class="rule"></div>
-    </div>
-
-    <div class="gallery-group">
+    <div class="gallery-group" style="margin-top:44px;">
       <h3 data-i18n="group_software_h3">Web &amp; Software</h3>
-      <div class="gallery-grid" data-group="software">
+      <div class="gallery-grid" data-group="tech">
         <figure class="gallery-item" data-full="assets/images/jusoor_hero.jpg" data-cap="Jusoor &mdash; homepage" data-i18n-attr="data-cap:cap_jusoor_hero">
           <img src="assets/images/jusoor_hero.jpg" alt="Jusoor marketplace homepage" loading="lazy" data-i18n-attr="alt:alt_jusoor_hero">
           <figcaption data-i18n="cap_jusoor_hero">Jusoor &mdash; homepage</figcaption>
@@ -302,23 +297,59 @@
           <img src="assets/images/tenders_redacted.jpg" alt="Tender-tracking portal, client data blurred for privacy" loading="lazy" data-i18n-attr="alt:alt_tenders">
           <figcaption data-i18n="cap_tenders">Tender-tracking portal</figcaption>
         </figure>
-      </div>
-    </div>
-
-    <div class="gallery-group">
-      <h3 data-i18n="group_office_h3">Office &amp; Equipment</h3>
-      <div class="gallery-grid" data-group="office">
-        <figure class="gallery-item" data-full="assets/images/office_desks.jpg" data-cap="Office fit-out" data-i18n-attr="data-cap:cap_office_desks">
-          <img src="assets/images/office_desks.jpg" alt="Office desks fitted out with equipment" loading="lazy" data-i18n-attr="alt:alt_office_desks">
-          <figcaption data-i18n="cap_office_desks">Office fit-out</figcaption>
-        </figure>
-        <figure class="gallery-item" data-full="assets/images/office_floor.jpg" data-cap="Workspace setup" data-i18n-attr="data-cap:cap_office_floor">
-          <img src="assets/images/office_floor.jpg" alt="Open-plan office floor" loading="lazy" data-i18n-attr="alt:alt_office_floor">
-          <figcaption data-i18n="cap_office_floor">Workspace setup</figcaption>
-        </figure>
         <figure class="gallery-item" data-full="assets/images/pc_hardware.jpg" data-cap="Computers &amp; technical equipment" data-i18n-attr="data-cap:cap_pc_hardware">
           <img src="assets/images/pc_hardware.jpg" alt="Computer hardware and internal components" loading="lazy" data-i18n-attr="alt:alt_pc_hardware">
           <figcaption data-i18n="cap_pc_hardware">Computers &amp; technical equipment</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- V Smart Homes -->
+<section class="section-divider" id="smart">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="section_smart_eyebrow">V Smart Homes</p>
+      <h2 data-i18n="section_smart_h2">Smart home devices &amp; installations.</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="catalog-intro">
+      <h2 data-i18n="catalog_h2">V Group Catalogue</h2>
+      <p data-i18n="catalog_p">Our full services catalogue &mdash; every division, flagship product and case study, page by page. Use the arrows or click a thumbnail to jump; click the page to view it full-screen.</p>
+    </div>
+    <div class="catalog-viewer" data-catalog="smart">
+      <div class="catalog-stage">
+        <img class="catalogStageImg" src="assets/images/catalog_page_1.jpg" alt="V Group catalogue, page 1">
+      </div>
+      <div class="catalog-nav">
+        <button class="catalog-nav-btn catalogPrev" type="button"><bdi dir="ltr">&#8249;</bdi> <span data-i18n="catalog_prev_word">Previous</span></button>
+        <span class="catalog-page-label catalogPageLabel">Page 1 of 7</span>
+        <button class="catalog-nav-btn catalogNext" type="button"><span data-i18n="catalog_next_word">Next</span> <bdi dir="ltr">&#8250;</bdi></button>
+      </div>
+      <div class="catalog-thumbs catalogThumbs">
+        <img data-i="0" class="active" src="assets/images/catalog_page_1.jpg" alt="Page 1">
+        <img data-i="1" src="assets/images/catalog_page_2.jpg" alt="Page 2">
+        <img data-i="2" src="assets/images/catalog_page_3.jpg" alt="Page 3">
+        <img data-i="3" src="assets/images/catalog_page_4.jpg" alt="Page 4">
+        <img data-i="4" src="assets/images/catalog_page_5.jpg" alt="Page 5">
+        <img data-i="5" src="assets/images/catalog_page_6.jpg" alt="Page 6">
+        <img data-i="6" src="assets/images/catalog_page_7.jpg" alt="Page 7">
+      </div>
+    </div>
+
+    <div class="gallery-group" style="margin-top:44px;">
+      <h3 data-i18n="group_smart_h3">Smart Homes</h3>
+      <p style="font-size:0.82rem;color:var(--ink-soft);margin-bottom:14px;" data-i18n="placeholder_note">Placeholder photos &mdash; to be replaced with V Smart Homes project photography.</p>
+      <div class="gallery-grid" data-group="smart">
+        <figure class="gallery-item" data-full="assets/images/office_desks.jpg" data-cap="Placeholder photo (smart home photography coming soon)" data-i18n-attr="data-cap:cap_smart_placeholder_1">
+          <img src="assets/images/office_desks.jpg" alt="Placeholder image, to be replaced with smart home project photography" loading="lazy" data-i18n-attr="alt:alt_smart_placeholder_1">
+          <figcaption data-i18n="cap_smart_placeholder_1">Placeholder photo (smart home photography coming soon)</figcaption>
+        </figure>
+        <figure class="gallery-item" data-full="assets/images/office_floor.jpg" data-cap="Placeholder photo (smart home photography coming soon)" data-i18n-attr="data-cap:cap_smart_placeholder_2">
+          <img src="assets/images/office_floor.jpg" alt="Placeholder image, to be replaced with smart home project photography" loading="lazy" data-i18n-attr="alt:alt_smart_placeholder_2">
+          <figcaption data-i18n="cap_smart_placeholder_2">Placeholder photo (smart home photography coming soon)</figcaption>
         </figure>
       </div>
     </div>
@@ -342,11 +373,11 @@
         <img class="mark" src="assets/images/logo_icon.png" alt="V Group logo">
         <span class="brand-word" style="font-size:1.1rem;" data-i18n="brand_word">V Group</span>
       </div>
-      <p class="foot-legal" data-i18n="foot_legal">Double V C &middot; Kingdom of Saudi Arabia<br>Registered trade name of V Group, founded 2026.</p>
+      <p class="foot-legal" data-i18n="foot_legal">Double V C &middot; Kingdom of Saudi Arabia<br>Registered trade name of V Group.</p>
     </div>
     <div class="foot-divs">
-      <div><b data-i18n="foot_divs_title">Divisions</b><span data-i18n="foot_divs_list">V Technology<br>V Smart Homes<br>V Office Solutions</span></div>
-      <div><b data-i18n="foot_contact_title">Contact</b><bdi>+966 50 826 9914</bdi><br><bdi>+966 58 355 1154</bdi><br><bdi>+966 54 308 5598</bdi><br><bdi>V_Group_SA@outlook.com</bdi></div>
+      <div><b data-i18n="foot_divs_title">Divisions</b><span data-i18n="foot_divs_list">V Technology<br>V Smart Homes</span></div>
+      <div><b data-i18n="foot_contact_title">Contact</b><bdi>+966 50 826 9914</bdi><br><bdi>+966 58 355 1154</bdi><br><bdi>+966 53 034 2527</bdi><br><bdi>V_Group_SA@outlook.com</bdi></div>
     </div>
   </div>
   <div class="wrap foot-bottom">
@@ -371,26 +402,32 @@
       "assets/images/catalog_page_4.jpg", "assets/images/catalog_page_5.jpg", "assets/images/catalog_page_6.jpg",
       "assets/images/catalog_page_7.jpg"
     ];
-    var stageImg = document.getElementById('catalogStageImg');
-    var pageLabel = document.getElementById('catalogPageLabel');
-    var prevBtn = document.getElementById('catalogPrev');
-    var nextBtn = document.getElementById('catalogNext');
-    var thumbs = Array.prototype.slice.call(document.querySelectorAll('#catalogThumbs img'));
-    var pageIndex = 0;
 
-    function renderPage(){
-      stageImg.src = catalogPages[pageIndex];
-      stageImg.alt = "V Group catalogue, page " + (pageIndex + 1);
-      pageLabel.textContent = t('catalog_page_label', { n: pageIndex + 1, total: catalogPages.length });
-      prevBtn.disabled = pageIndex === 0;
-      nextBtn.disabled = pageIndex === catalogPages.length - 1;
-      thumbs.forEach(function(thumb, i){ thumb.classList.toggle('active', i === pageIndex); });
+    function setupCatalog(container){
+      var stageImg = container.querySelector('.catalogStageImg');
+      var pageLabel = container.querySelector('.catalogPageLabel');
+      var prevBtn = container.querySelector('.catalogPrev');
+      var nextBtn = container.querySelector('.catalogNext');
+      var thumbs = Array.prototype.slice.call(container.querySelectorAll('.catalogThumbs img'));
+      var pageIndex = 0;
+      function renderPage(){
+        stageImg.src = catalogPages[pageIndex];
+        stageImg.alt = "V Group catalogue, page " + (pageIndex + 1);
+        pageLabel.textContent = t('catalog_page_label', { n: pageIndex + 1, total: catalogPages.length });
+        prevBtn.disabled = pageIndex === 0;
+        nextBtn.disabled = pageIndex === catalogPages.length - 1;
+        thumbs.forEach(function(thumb, i){ thumb.classList.toggle('active', i === pageIndex); });
+      }
+      prevBtn.addEventListener('click', function(){ if(pageIndex > 0){ pageIndex--; renderPage(); } });
+      nextBtn.addEventListener('click', function(){ if(pageIndex < catalogPages.length - 1){ pageIndex++; renderPage(); } });
+      thumbs.forEach(function(thumb){
+        thumb.addEventListener('click', function(){ pageIndex = parseInt(thumb.getAttribute('data-i'), 10); renderPage(); });
+      });
+      renderPage();
+      return renderPage;
     }
-    prevBtn.addEventListener('click', function(){ if(pageIndex > 0){ pageIndex--; renderPage(); } });
-    nextBtn.addEventListener('click', function(){ if(pageIndex < catalogPages.length - 1){ pageIndex++; renderPage(); } });
-    thumbs.forEach(function(thumb){
-      thumb.addEventListener('click', function(){ pageIndex = parseInt(thumb.getAttribute('data-i'), 10); renderPage(); });
-    });
+
+    var catalogRenderers = Array.prototype.slice.call(document.querySelectorAll('.catalog-viewer')).map(setupCatalog);
 
     var galleryItems = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
 
@@ -439,7 +476,7 @@
 
     if(window.VGroupI18n){
       window.VGroupI18n.onChange(function(){
-        renderPage();
+        catalogRenderers.forEach(function(renderPage){ renderPage(); });
         if(lightbox.classList.contains('open') && activeMode !== null && current >= 0){
           show(current);
         }
