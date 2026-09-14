@@ -100,7 +100,7 @@
       val5_p: "Our client’s success is part of our own.",
 
       trust_badge_b: "Authorized Partner — Optimus Solutions",
-      trust_badge_span: "Designated partner, Kingdom of Saudi Arabia · certified through Dec 2027",
+      trust_badge_span: "Designated partner, Kingdom of Saudi Arabia",
       trust_note: "Certificate issued by Optimus Solutions Teknoloji Üretim Sanayi Ticaret A.Ş., İstanbul",
 
       contact_eyebrow: "Get in touch",
@@ -270,7 +270,7 @@
       val5_p: "نجاح عملائنا جزء لا يتجزأ من نجاحنا.",
 
       trust_badge_b: "شريك معتمد — Optimus Solutions",
-      trust_badge_span: "شريك معتمد في المملكة العربية السعودية · الشهادة سارية حتى ديسمبر 2027",
+      trust_badge_span: "شريك معتمد في المملكة العربية السعودية",
       trust_note: "الشهادة صادرة عن شركة Optimus Solutions Teknoloji Üretim Sanayi Ticaret A.Ş.، إسطنبول",
 
       contact_eyebrow: "تواصل معنا",

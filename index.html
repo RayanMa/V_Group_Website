@@ -21,6 +21,8 @@
     --navy-2:#212E4C;
     --text-on-navy:#EFE8D6;
     --text-on-navy-soft:#AEB4C9;
+    --gold-panel:#7C5A22;
+    --text-on-gold-soft:#E4D2AE;
   }
 
   *{box-sizing:border-box;}
@@ -298,12 +300,12 @@
   .trust-badge span{display:block;font-size:0.8rem;color:var(--ink-soft);}
   .trust-note{font-size:0.8rem;color:var(--ink-soft);}
 
-  /* ---------- contact (navy) ---------- */
-  .contact{background:var(--navy);color:var(--text-on-navy);text-align:center;}
-  .contact .eyebrow{color:var(--gold-on-navy);}
+  /* ---------- contact (gold) ---------- */
+  .contact{background:var(--gold-panel);color:var(--text-on-navy);text-align:center;}
+  .contact .eyebrow{color:#fff;}
   .contact h2{font-size:clamp(2.1rem,4.6vw,3rem);max-width:20ch;margin-inline:auto;color:var(--text-on-navy);}
-  .contact .rule{background:var(--gold-on-navy);}
-  .contact .lede{margin:22px auto 0;color:var(--text-on-navy-soft);text-align:center;}
+  .contact .rule{background:#fff;}
+  .contact .lede{margin:22px auto 0;color:var(--text-on-gold-soft);text-align:center;}
   .contact-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:36px;}
   .whatsapp{
     display:inline-flex;align-items:center;gap:10px;background:var(--navy-2);
@@ -340,7 +342,7 @@
   }
 
   /* ---------- footer ---------- */
-  footer{background:#121A2C;color:var(--text-on-navy-soft);padding-block:38px;}
+  footer{background:var(--gold-panel);color:var(--text-on-gold-soft);padding-block:38px;}
   .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;}
   .foot-brand{display:flex;align-items:center;gap:10px;color:var(--text-on-navy);}
   .foot-brand .mark{width:20px;height:auto;}
@@ -348,7 +350,7 @@
   .foot-divs{display:flex;gap:28px;flex-wrap:wrap;font-size:0.84rem;}
   .foot-divs div b{display:block;color:var(--text-on-navy);font-weight:700;margin-bottom:6px;}
   .foot-bottom{
-    margin-top:30px;padding-top:18px;border-top:1px solid rgba(201,162,92,0.18);
+    margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.22);
     font-size:0.78rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
   }
 </style>
@@ -556,7 +558,7 @@
       <span class="ring">O</span>
       <div>
         <b data-i18n="trust_badge_b">Authorized Partner &mdash; Optimus Solutions</b>
-        <span data-i18n="trust_badge_span">Designated partner, Kingdom of Saudi Arabia &middot; certified through Dec 2027</span>
+        <span data-i18n="trust_badge_span">Designated partner, Kingdom of Saudi Arabia</span>
       </div>
     </div>
     <p class="trust-note" data-i18n="trust_note">Certificate issued by Optimus Solutions Teknoloji &Uuml;retim Sanayi Ticaret A.&Scedil;., &Iuml;stanbul</p>
