@@ -19,7 +19,7 @@
       hero_h1: "Today’s solutions… <em>Tomorrow’s</em> success.",
       hero_lede: "V Group is a Saudi business group built to help companies establish, grow and evolve — bringing custom technology and workplace readiness together under one roof.",
       hero_btn1: "Start a conversation",
-      hero_btn2: "See our services",
+      hero_btn2: "See our work",
 
       who_eyebrow: "Who we are",
       who_h2: "A business group built around one belief.",
@@ -143,7 +143,7 @@
 
       teaser_eyebrow: "Gallery &amp; catalogue",
       teaser_h2: "See the work up close, and browse our full catalogue.",
-      teaser_p: "Screenshots from Jusoor, AinHR and our custom CRM, plus our complete services catalogue as a viewable PDF.",
+      teaser_p: "Screenshots from Jusoor, MAT, AinHR and FAZ Global, plus our complete services catalogue as a viewable PDF.",
       teaser_btn: "Open Gallery &amp; Catalogue",
 
       why_eyebrow: "Why V Group",
@@ -194,16 +194,16 @@
       pagehead_h1: "A closer look at what we build and equip.",
       pagehead_lede: "Screenshots from the platforms we’ve shipped, and our complete services catalogue — open to browse below.",
 
-      nav_section_tech: "V Technology",
+      nav_section_tech: "Our Work",
       nav_section_smart: "V Smart Homes",
 
-      section_tech_eyebrow: "V Technology",
+      section_tech_eyebrow: "Our Work",
       section_tech_h2: "Websites, ERP &amp; CRM &mdash; in practice.",
       section_smart_eyebrow: "V Smart Homes",
       section_smart_h2: "Smart home devices &amp; installations.",
 
       catalog_h2: "Catalogue",
-      catalog_p: "Our full services catalogue — every division, flagship product and case study, page by page. Use the arrows or click a thumbnail to jump; click the page to view it full-screen.",
+      catalog_p: "Our full services catalogue — flagship products and case studies, page by page. Use the arrows or click a thumbnail to jump; click the page to view it full-screen.",
       catalog_prev_word: "Previous",
       catalog_next_word: "Next",
       catalog_page_label: "Page {n} of {total}",
@@ -270,7 +270,7 @@
       hero_h1: "حلول اليوم... <em>نجاح الغد</em>.",
       hero_lede: "مجموعة ڤي هي مجموعة أعمال سعودية تأسست لمساعدة الشركات على التأسيس والنمو والتطور، من خلال الجمع بين الحلول التقنية المخصصة وتجهيز بيئات العمل تحت مظلة واحدة.",
       hero_btn1: "ابدأ محادثة",
-      hero_btn2: "استعرض خدماتنا",
+      hero_btn2: "استعرض أعمالنا",
 
       who_eyebrow: "من نحن",
       who_h2: "مجموعة أعمال تأسست على مبدأ واحد.",
@@ -394,7 +394,7 @@
 
       teaser_eyebrow: "المعرض والكتالوج",
       teaser_h2: "شاهد أعمالنا عن قرب، وتصفّح كتالوجنا الكامل.",
-      teaser_p: "لقطات من منصات جسور وAinHR ونظام CRM المخصص، إضافة إلى كتالوج خدماتنا الكامل بصيغة PDF قابلة للتصفّح.",
+      teaser_p: "لقطات من منصات جسور وMAT وAinHR وFAZ Global، إضافة إلى كتالوج خدماتنا الكامل بصيغة PDF قابلة للتصفّح.",
       teaser_btn: "افتح المعرض والكتالوج",
 
       why_eyebrow: "لماذا مجموعة ڤي",
@@ -431,7 +431,7 @@
       contact_h2: "لنبنِ معاً الخطوة القادمة لأعمالك.",
       contact_p: "فريقنا جاهز لمناقشة مشروعك وبناء الحل المناسب لأعمالك.", // كانت "...وتكليف القطاع المناسب — أو القطاعين معاً..." — أعد هذا النص عند عودة قطاع ڤي للمنازل الذكية
       whatsapp_label: "واتساب",
-      whatsapp_tag_tech: "ڤي للتقنية",
+      whatsapp_tag_tech: "المبيعات",
       whatsapp_tag_smart: "ڤي للمنازل الذكية",
       email_label: "البريد الإلكتروني",
 
@@ -445,16 +445,16 @@
       pagehead_h1: "نظرة أقرب على ما نبنيه ونجهّزه.",
       pagehead_lede: "لقطات من المنصات التي أطلقناها، وكتالوج خدماتنا الكامل — متاح للتصفّح أدناه.",
 
-      nav_section_tech: "ڤي للتقنية",
+      nav_section_tech: "أعمالنا",
       nav_section_smart: "ڤي للمنازل الذكية",
 
-      section_tech_eyebrow: "ڤي للتقنية",
+      section_tech_eyebrow: "أعمالنا",
       section_tech_h2: "مواقع إلكترونية وأنظمة ERP وCRM &mdash; في الواقع.",
       section_smart_eyebrow: "ڤي للمنازل الذكية",
       section_smart_h2: "أجهزة المنازل الذكية وتركيباتها.",
 
       catalog_h2: "الكتالوج",
-      catalog_p: "كتالوج خدماتنا الكامل — كل قطاع، ومنتج رئيسي، ودراسة حالة، صفحة بصفحة. استخدم الأسهم أو اضغط على إحدى الصور المصغرة للانتقال، واضغط على الصفحة لعرضها بملء الشاشة.",
+      catalog_p: "كتالوج خدماتنا الكامل — منتجاتنا الرئيسية ودراسات حالة، صفحة بصفحة. استخدم الأسهم أو اضغط على إحدى الصور المصغرة للانتقال، واضغط على الصفحة لعرضها بملء الشاشة.",
       catalog_prev_word: "السابق",
       catalog_next_word: "التالي",
       catalog_page_label: "الصفحة {n} من {total}",
