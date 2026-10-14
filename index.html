@@ -43,8 +43,8 @@
   html[dir="rtl"]{--font:'IBM Plex Sans Arabic','Plus Jakarta Sans',system-ui,sans-serif;}
 
   *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;overflow-x:clip;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip;}
   img,video{display:block;max-width:100%;}
   a{color:inherit;}
   a,button{-webkit-tap-highlight-color:transparent;}
@@ -262,6 +262,11 @@
   .addon{margin-top:20px;border-radius:var(--r-card);background:var(--ink);color:#F2EDE2;padding:clamp(26px,3.4vw,40px);display:grid;grid-template-columns:minmax(0,1.3fr) auto minmax(0,1.4fr);gap:28px;align-items:center;position:relative;overflow:hidden;}
   .addon .vmark{width:300px;inset-inline-end:-60px;top:-70px;opacity:.14;}
   .addon .tag{font-size:12.5px;font-weight:700;color:var(--gold-2);}
+  .addon-tags{display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
+  .addon .soon{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--gold-light);border:1px solid rgba(215,178,110,.45);background:rgba(215,178,110,.12);border-radius:999px;padding:4px 11px;}
+  .addon .soon::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold-2);animation:soonPulse 2.4s var(--ease) infinite;}
+  @keyframes soonPulse{0%,100%{opacity:1}50%{opacity:.35}}
+  @media (prefers-reduced-motion: reduce){.addon .soon::before{animation:none;}}
   .addon h3{font-size:1.5rem;font-weight:800;margin-top:6px;}
   .addon p{color:rgba(242,237,226,.72);font-size:15px;margin-top:8px;}
   .addon .price .amount{color:var(--gold-light);}
@@ -725,11 +730,11 @@
       <div class="addon" data-reveal>
         <span class="vmark" aria-hidden="true"></span>
         <div>
-          <span class="tag" data-i18n="addon_tag">Add-on</span>
+          <div class="addon-tags"><span class="tag" data-i18n="addon_tag">Add-on</span><span class="soon" data-i18n="addon_soon">Coming soon</span></div>
           <h3 data-i18n="addon_name">AI Add-on</h3>
           <p data-i18n="addon_desc">An optional extra for Enterprise subscribers only. Not included in the Enterprise price. Usage is subject to a monthly limit.</p>
         </div>
-        <div class="price"><span class="amount" dir="ltr"><span class="sar" role="img" aria-label="SAR"></span>167</span><span class="unit" data-i18n="addon_unit">per month</span></div>
+        <div class="price"><span class="amount" dir="ltr"><span class="sar" role="img" aria-label="SAR"></span>167</span><span class="unit" data-i18n="addon_unit">per day</span></div>
         <ul>
           <li><i class="ph-bold ph-sparkle" aria-hidden="true"></i><span data-i18n="addon_li1">Instant summaries of customers and deals</span></li>
           <li><i class="ph-bold ph-sparkle" aria-hidden="true"></i><span data-i18n="addon_li2">Assisted drafting of offers and follow-ups</span></li>
@@ -737,7 +742,7 @@
         </ul>
       </div>
 
-      <p class="pnote" data-i18n="pricing_note">All prices are in Saudi Riyals (SAR) and exclude VAT. Packages are billed annually per user after their free trial period. The AI Add-on is an optional extra for Enterprise subscribers, billed monthly and subject to a monthly usage limit.</p>
+      <p class="pnote" data-i18n="pricing_note">All prices are in Saudi Riyals (SAR) and exclude VAT. Packages are billed annually per user after their free trial period. The AI Add-on is coming soon as an optional extra for Enterprise subscribers, priced per day and subject to a monthly usage limit.</p>
 
       <details class="compare" data-reveal>
         <summary><span data-i18n="price_compare">Compare all features</span><i class="ph-light ph-caret-down" aria-hidden="true"></i></summary>

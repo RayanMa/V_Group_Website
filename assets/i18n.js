@@ -90,12 +90,13 @@
       addon_tag: "Add-on",
       addon_name: "AI Add-on",
       addon_desc: "An optional extra for Enterprise subscribers only. Not included in the Enterprise price. Usage is subject to a monthly limit.",
-      addon_unit: "per month",
+      addon_unit: "per day",
+      addon_soon: "Coming soon",
       addon_li1: "Instant summaries of customers and deals",
       addon_li2: "Assisted drafting of offers and follow-ups",
       addon_li3: "Ask questions of your CRM data in plain language",
 
-      pricing_note: "All prices are in Saudi Riyals (SAR) and exclude VAT. Packages are billed annually per user after their free trial period. The AI Add-on is an optional extra for Enterprise subscribers, billed monthly and subject to a monthly usage limit.",
+      pricing_note: "All prices are in Saudi Riyals (SAR) and exclude VAT. Packages are billed annually per user after their free trial period. The AI Add-on is coming soon as an optional extra for Enterprise subscribers, priced per day and subject to a monthly usage limit.",
 
       cmp_feature_col: "Feature",
       cmp_col1_name: "Essential",
@@ -407,12 +408,13 @@
       addon_tag: "إضافة اختيارية",
       addon_name: "إضافة الذكاء الاصطناعي",
       addon_desc: "إضافة اختيارية لمشتركي باقة المؤسسات فقط. غير مشمولة في سعر باقة المؤسسات. الاستخدام يخضع لحد شهري.",
-      addon_unit: "شهرياً",
+      addon_unit: "يومياً",
+      addon_soon: "قريباً",
       addon_li1: "ملخصات فورية للعملاء والصفقات",
       addon_li2: "مساعدة في صياغة العروض والمتابعات",
       addon_li3: "اطرح أسئلة عن بيانات CRM الخاصة بك بلغة طبيعية",
 
-      pricing_note: "جميع الأسعار بالريال السعودي (SAR) ولا تشمل ضريبة القيمة المضافة. تُفوتر الباقات سنوياً لكل مستخدم بعد انتهاء فترة التجربة المجانية. إضافة الذكاء الاصطناعي اختيارية لمشتركي باقة المؤسسات، تُفوتر شهرياً وتخضع لحد استخدام شهري.",
+      pricing_note: "جميع الأسعار بالريال السعودي (SAR) ولا تشمل ضريبة القيمة المضافة. تُفوتر الباقات سنوياً لكل مستخدم بعد انتهاء فترة التجربة المجانية. إضافة الذكاء الاصطناعي قريباً كإضافة اختيارية لمشتركي باقة المؤسسات، بسعر يومي وتخضع لحد استخدام شهري.",
 
       cmp_feature_col: "الميزة",
       cmp_col1_name: "الباقة الأساسية",
